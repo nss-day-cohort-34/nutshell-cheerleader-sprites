@@ -2,8 +2,23 @@
   "users": [
     {
       "id": 1,
-      "username": "howard",
-      "email": "howard@gmail.com"
+      "username": "tom",
+      "email": "tom@myspace.com"
+    },
+    {
+      "id": 2,
+      "username": "curtis",
+      "email": "curtis@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "joe",
+      "email": "joe@gmail.com"
+    },
+    {
+      "username": "allie",
+      "email": "allie@gmail.com",
+      "id": 4
     }
   ]
 }
