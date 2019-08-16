@@ -19,6 +19,16 @@
       "username": "allie",
       "email": "allie@gmail.com",
       "id": 4
+    },
+    {
+      "username": "kevin",
+      "email": "kevin@gmail.com",
+      "id": 5
+    },
+    {
+      "username": "jimbob",
+      "email": "jimbob@gmail.com",
+      "id": 6
     }
   ]
 }

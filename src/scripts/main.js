@@ -16,14 +16,20 @@ registerButton.addEventListener("click", event => {
   const emailValue = document.querySelector(".login__email").value;
   const userObject = factory.createUser(usernameValue, emailValue);
   console.log(userObject);
+
   data.getData("users").then(parsedUsers => {
+    const usernames = [];
     parsedUsers.forEach(user => {
-      if (user.username === usernameValue) {
-        alert("UserName taken. Create new Username");
-      }
+      usernames.push(user.username);
     });
+
+    if (usernames.includes(usernameValue) === false) {
+      data.saveData("users", userObject);
+      window.confirm("Successfully created new user. Please log in.");
+    } else {
+      window.alert("Username taken. Create new Username");
+    }
   });
-  data.saveData("users", userObject);
 });
 
 loginButton.addEventListener("click", event => {
