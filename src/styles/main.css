@@ -1,7 +1,8 @@
 /* landing page sections  */
 
 /* logged in section  */
-.logged--in--container {
+
+.hidden {
   display: none;
 }
 
