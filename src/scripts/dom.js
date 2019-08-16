@@ -1,3 +1,5 @@
+const dom = Object.create({ 
+
 // ==================== Users Section =====================
 
 
@@ -15,7 +17,9 @@
 
 
 // ==================== Events Section =====================
-
+renderToDom : (location, htmlRep) => {
+    location.innerHTML += htmlRep
+}
 
 
 
@@ -39,3 +43,7 @@
 
 
 // ==================== Messages Section =====================
+
+})
+
+export default dom
