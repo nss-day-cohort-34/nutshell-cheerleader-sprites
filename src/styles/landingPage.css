@@ -44,22 +44,15 @@ font-family: 'Special Elite', cursive; */
   text-align: center;
 }
 .content h1 {
-  /* font-family: "Raleway", sans-serif; */
   color: #50d924;
   text-shadow: 0px 0px 300px #fff;
   font-size: 275%;
-  /* font-family: "Coming Soon", cursive; */
-  /* font-family: "Lacquer", sans-serif; */
-  /* font-family: "Bangers", cursive; */
   font-family: "Special Elite", cursive;
 }
 .content p {
   font-size: 150%;
   cursor: pointer;
-  /* font-family: "Coming Soon", cursive; */
-  /* font-family: "Lacquer", sans-serif; */
   font-family: "Bangers", cursive;
-  /* font-family: "Special Elite", cursive; */
 }
 /* hyper link styles  */
 .content a:link,
@@ -84,13 +77,11 @@ a:active {
 /* login and statment sections */
 .userStatement {
   text-align: center;
-  font-family: "Bangers", cursive;
 }
 .userStatement p {
   font-size: 150%;
   text-align: center;
   margin: 3% auto;
-  /* font-family: sans-serif; */
 }
 .login__container {
   text-align: center;
