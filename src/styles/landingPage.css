@@ -1,0 +1,165 @@
+/* =================================
+  Base Styles
+==================================== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #d1cfb5;
+}
+
+/* =================================
+  Base Layout Styles
+==================================== */
+
+/* ---- Font styles ---- */
+/* font-family: 'Coming Soon', cursive;
+font-family: 'Lacquer', sans-serif;
+font-family: 'Bangers', cursive;
+font-family: 'Special Elite', cursive; */
+
+/* ---- Layout Containers ---- */
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(/src/img/bowl-core-crack-33344.jpg) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+.intro .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+/* page content styles */
+.content {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content h1 {
+  /* font-family: "Raleway", sans-serif; */
+  color: #50d924;
+  text-shadow: 0px 0px 300px #fff;
+  font-size: 275%;
+  /* font-family: "Coming Soon", cursive; */
+  /* font-family: "Lacquer", sans-serif; */
+  /* font-family: "Bangers", cursive; */
+  font-family: "Special Elite", cursive;
+}
+.content p {
+  font-size: 150%;
+  cursor: pointer;
+  /* font-family: "Coming Soon", cursive; */
+  /* font-family: "Lacquer", sans-serif; */
+  font-family: "Bangers", cursive;
+  /* font-family: "Special Elite", cursive; */
+}
+/* hyper link styles  */
+.content a:link,
+a:visited {
+  background-color: #cba257;
+  color: #7a4b2e;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 5px solid darkgoldenrod;
+  border-radius: 15%;
+  opacity: 0.9;
+}
+.content a:hover,
+a:active {
+  background-color: #5b220d;
+  color: gold;
+  border: 5px solid goldenrod;
+}
+
+/* login and statment sections */
+.userStatement {
+  text-align: center;
+  font-family: "Bangers", cursive;
+}
+.userStatement p {
+  font-size: 150%;
+  text-align: center;
+  margin: 3% auto;
+  /* font-family: sans-serif; */
+}
+.login__container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.login__container--div {
+  border: 5px solid #50d924;
+  background: #a0b978;
+  padding: 5px 0 5px 0;
+  width: 34%;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.login__container--div:hover {
+  background: #50d924;
+  cursor: crosshair;
+}
+.cheerleaderImage {
+  border-radius: 8%;
+}
+.cheerleaderImage:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  cursor: grabbing;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+/* footer styles  */
+.main-footer {
+  text-align: center;
+  padding: 2em 0;
+  background: #7a4b2e;
+  color: #fff;
+}
+
+/* footer hyper links  */
+footer.main-footer a {
+  color: #fff;
+}
