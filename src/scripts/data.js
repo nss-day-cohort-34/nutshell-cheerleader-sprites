@@ -14,6 +14,13 @@ const data = Object.create({
     getData: (resource) => {
         return fetch(`http://localhost:8088/${resource}`)
             .then(response => response.json());
+    },
+
+    deleteData : (resource, resourceId) => {
+        return fetch(`http://localhost:8088/${resource}/${resourceId}`, {
+            method: "DELETE"
+        })
+            .then(response => response.json())
     }
 
 
