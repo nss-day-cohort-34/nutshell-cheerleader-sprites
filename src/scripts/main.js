@@ -12,8 +12,8 @@ const loginButton = document.querySelector(".login__button");
 
 // Takes input values, creates user object and saves it to the database
 registerButton.addEventListener("click", event => {
-  const usernameValue = document.querySelector(".login__username").value;
-  const emailValue = document.querySelector(".login__email").value;
+  let usernameValue = document.querySelector(".login__username").value;
+  let emailValue = document.querySelector(".login__email").value;
   const userObject = factory.createUser(usernameValue, emailValue);
   console.log(userObject);
 
@@ -30,24 +30,36 @@ registerButton.addEventListener("click", event => {
       window.alert("Username taken. Create new Username");
     }
   });
+  // usernameValue = "";
+  // emailValue = "";
 });
 
 loginButton.addEventListener("click", event => {
-  const usernameValue = document.querySelector(".login__username").value;
-  const emailValue = document.querySelector(".login__email").value;
+  let usernameValue = document.querySelector(".login__username").value;
+  let emailValue = document.querySelector(".login__email").value;
   data.getData("users").then(parsedUsers => {
+    const usernames = [];
+    parsedUsers.forEach(user => {
+      usernames.push(user.username);
+    });
+
     parsedUsers.forEach(user => {
       if (user.username === usernameValue && user.email === emailValue) {
-        sessionStorage.setItem("activeUser", user.id);
+      sessionStorage.setItem("activeUser", user.id);
         console.log(sessionStorage.activeUser);
         // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
-      } else {
-        window.alert(
-          "Username or email not recognized. Please try again or register as a new user."
-        );
       }
     });
-  });
+
+    if (usernames.includes(usernameValue) === false) {
+      window.alert("Username not recognized. Please check and try again or register as a new user");
+    }
+  })
+    .then(() => {
+      console.log("test");
+      document.querySelector(".login__username").value = ""
+      document.querySelector(".login__email").value = ""
+    });
 });
 
 // ==================== Friendships Section =====================
