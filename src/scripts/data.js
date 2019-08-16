@@ -32,7 +32,7 @@ const data = Object.create({
             body: JSON.stringify(object)
         })
             .then(response => response.json())
-    }
+    },
 
     // ==================== Friendships Section =====================
 

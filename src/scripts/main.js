@@ -4,6 +4,7 @@
 // ==================== Import modules ====================
 import data from "./data.js";
 import factory from "./factory.js";
+import dom from "./dom.js";
 
 // ==================== Users Section =====================
 
@@ -52,6 +53,7 @@ loginButton.addEventListener("click", event => {
         console.log(sessionStorage.activeUser);
 
         // Function that bundles necessary display functions for each piece of the dashboard to display the dashboard for the current user goes here
+        displayMessages();
       }
     });
 
@@ -86,3 +88,16 @@ loginButton.addEventListener("click", event => {
 // ==================== Tasks Section =====================
 
 // ==================== Messages Section =====================
+// displayMessages contains all functionality that should be executed when a successful login is detected
+const displayMessages = () => {
+  // Render message container to DOM with input fields
+  dom.createMessagesForm();
+
+  // Get all messages from the database, create HTML Representations and render them to the DOM
+  data.getData("messages").then(parsedMessages => {
+    parsedMessages.forEach(message => {
+
+    });
+
+  });
+};

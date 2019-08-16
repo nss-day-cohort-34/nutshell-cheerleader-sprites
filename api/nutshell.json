@@ -45,8 +45,26 @@
     {
       "id": 1,
       "userId": 1,
-      "messaage": "",
-      "date": ""
+      "message": "Nulla ut leo eget felis pellentesque sollicitudin.",
+      "date": "08-16-2019"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "message": "Cras id elit vitae felis molestie venenatis",
+      "date": "08-16-2019"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "message": "Duis euismod velit vel eros feugiat, id pharetra erat ultriciess",
+      "date": "08-16-2019"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "message": "Nulla bibendum enim sed elit suscipit, sed auctor orci consequat.",
+      "date": "08-16-2019"
     }
   ],
   "events": [
