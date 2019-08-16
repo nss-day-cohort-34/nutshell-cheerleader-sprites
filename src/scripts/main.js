@@ -51,7 +51,7 @@ loginButton.addEventListener("click", event => {
         sessionStorage.setItem("activeUser", user.id);
         console.log(sessionStorage.activeUser);
 
-        // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
+        // Function that bundles necessary display functions for each piece of the dashboard to display the dashboard for the current user goes here
       }
     });
 
