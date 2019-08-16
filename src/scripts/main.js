@@ -23,15 +23,18 @@ registerButton.addEventListener("click", event => {
       usernames.push(user.username);
     });
 
-    if (usernames.includes(usernameValue) === false) {
+    if (!usernames.includes(usernameValue) && emailValue.includes("@")) {
       data.saveData("users", userObject);
       window.confirm("Successfully created new user. Please log in.");
     } else {
-      window.alert("Username taken. Create new Username");
+      window.alert("Invalid username or email.");
     }
+  })
+  .then(() => {
+    console.log("test");
+    document.querySelector(".login__username").value = ""
+    document.querySelector(".login__email").value = ""
   });
-  // usernameValue = "";
-  // emailValue = "";
 });
 
 loginButton.addEventListener("click", event => {
@@ -45,8 +48,9 @@ loginButton.addEventListener("click", event => {
 
     parsedUsers.forEach(user => {
       if (user.username === usernameValue && user.email === emailValue) {
-      sessionStorage.setItem("activeUser", user.id);
+        sessionStorage.setItem("activeUser", user.id);
         console.log(sessionStorage.activeUser);
+
         // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
       }
     });
@@ -59,6 +63,17 @@ loginButton.addEventListener("click", event => {
       console.log("test");
       document.querySelector(".login__username").value = ""
       document.querySelector(".login__email").value = ""
+
+      const landingPages = document.querySelectorAll(".landing--page");
+      console.log(landingPages);
+      landingPages.forEach(page => {
+        page.classList.add("hidden");
+      });
+
+      const dashboardPages = document.querySelectorAll(".logged--in--container");
+      dashboardPages.forEach(page => {
+        page.classList.remove("hidden");
+      })
     });
 });
 
