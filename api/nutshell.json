@@ -30,5 +30,41 @@
       "email": "jimbob@gmail.com",
       "id": 6
     }
+  ],
+  "news": [ 
+  {
+    "id": 1,
+    "userId":"",
+    "url": "",
+    "timestamp":"",
+    "title":"",
+    "summary":""
+  }
+],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "messaage": "",
+      "date": ""
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "",
+      "date": "",
+      "location": ""
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "taskName": "",  
+      "taskDate": "",
+      "completed": true
+    }
   ]
 }
