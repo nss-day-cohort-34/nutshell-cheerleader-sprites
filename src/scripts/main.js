@@ -94,10 +94,46 @@ const displayMessages = () => {
   dom.createMessagesForm();
 
   // Get all messages from the database, create HTML Representations and render them to the DOM
-  data.getData("messages").then(parsedMessages => {
+  data.getMessages().then(parsedMessages => {
+    console.log(parsedMessages);
+
     parsedMessages.forEach(message => {
+      const messageContainer = document.querySelector(".messages--list");
+      const messageHTML = dom.createMessageHTML(message);
+      dom.renderToDom(messageContainer, messageHTML);
 
     });
+  });
+
+  // Add event listener to send button to post a new message
+  const sendMessageButton = document.querySelector(".messages--input--button");
+  sendMessageButton.addEventListener("click", event => {
+    let messageValue = document.querySelector(".messages--input--text").value;
+    let currentUser = sessionStorage.activeUser;
+
+    const messageObject = factory.createMessage(currentUser, messageValue);
+    data.saveData("messages", messageObject)
+      .then(data.getMessages)
+      .then(parsedMessages => {
+        const messageContainer = document.querySelector(".messages--list");
+        messageContainer.innerHTML = "";
+
+        parsedMessages.forEach(message => {
+          const messageHTML = dom.createMessageHTML(message);
+          dom.renderToDom(messageContainer, messageHTML);
+        });
+      });
 
   });
+
+  // data.saveJournalEntry(newEntry)
+  //   .then(data.getJournalEntries)
+  //   .then(parsedEntries => {
+  //     parsedEntries.forEach(entry => {
+  //       const HTMLRepresentation = entryComponent.createEntry(entry);
+  //       entriesDOM.addHTML(HTMLRepresentation);
+  //     });
+  //   });
 };
+
+

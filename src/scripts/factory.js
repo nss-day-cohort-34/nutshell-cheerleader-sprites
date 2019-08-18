@@ -8,7 +8,7 @@ const factory = Object.create({
             "username": username,
             "email": email
         };
-    }
+    },
 
 
 
@@ -48,7 +48,14 @@ const factory = Object.create({
 
 
 // ==================== Messages Section =====================
-
+    createMessage: (activeUserId, messageContent) => {
+        const currentDate = new Date();
+        return {
+            userId: activeUserId,
+            message: messageContent,
+            date: currentDate
+        };
+    }
 });
 
 export default factory;

@@ -67,6 +67,10 @@ const data = Object.create({
 
 
     // ==================== Messages Section =====================
+    getMessages: () => {
+        return fetch("http://localhost:8088/messages?_expand=user")
+            .then(response => response.json());
+    }
 });
 
 export default data;

@@ -49,7 +49,7 @@ renderToDom : (location, htmlRep) => {
                                     <section class="messages--list"></section>
                                     <section class="messages--input">
                                         <input type="text" class="messages--input--text" placeholder="type message here">
-                                        <button class="messages--input">Send</button>
+                                        <button class="messages--input--button">Send</button>
                                     </section>
                                 </section>`;
         const messagesContainer = document.getElementById("messages--section");
@@ -59,7 +59,10 @@ renderToDom : (location, htmlRep) => {
 
     // Take in a message object and return an HTML representation of the message
     createMessageHTML: (messageObject) => {
-
+        return `<section class="message--item message--item--${messageObject.id}">
+                    <p class="message--item--message">${messageObject.user.username}: ${messageObject.message}</p>
+                    <p class="message--item--date">Date: ${messageObject.date}</p>
+                </section>`;
     }
 });
 
