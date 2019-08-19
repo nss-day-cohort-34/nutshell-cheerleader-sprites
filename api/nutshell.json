@@ -77,6 +77,13 @@
       "date": "2019-08-21",
       "location": "pool",
       "id": 3
+    },
+    {
+      "userId": "4",
+      "name": "hot yoga",
+      "date": "2019-08-26",
+      "location": "nuPower",
+      "id": 4
     }
   ],
   "tasks": [

@@ -53,7 +53,11 @@ const data = Object.create({
             body: JSON.stringify(object)
         })
             .then(response => response.json());
-    }
+    },
+    getEventData: (resource) => {
+        return fetch(`http://localhost:8088/${resource}`)
+            .then(response => response.json());
+    },
 
 
 

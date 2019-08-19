@@ -64,6 +64,20 @@ createAddEventsButton: () => {
         date: dateInput,
         location: locationInput,
     }
+},
+ createEventComponent: (event) => {
+    return `<section>
+    <h3>${event.name}</h3>
+    <p>${event.date}</p>
+    <p>${event.location}</p>
+    <button id="deleteEvent--${event.id}">
+        Delete Event
+    </button>
+    <button id="editEvent--${event.id}">
+        Edit Event
+    </button>
+    </section>
+    `
 }
 
 

@@ -82,12 +82,21 @@ loginButton.addEventListener("click", event => {
 // ==================== Friendships Section =====================
 
 // ==================== Events Section =====================
+// wrapped all the functions in another function
 const displayEvents = () => {
+  // first render my add event button to the dom
   dom.renderAddEventButtonToDom()
-// container where the form will appear once button is clicked
-const addEventButton = document.querySelector("#AddEvent__button--id")
-// event listener to render add event form when button is clicked
-addEventButton.addEventListener("click", event => {
+  // GET data
+  data.getEventData("events").then(parsedEvents => {
+    parsedEvents.forEach(event => {
+      const displayEventsContainer = document.querySelector("#display__events")
+      displayEventsContainer.innerHTML += factory.createEventComponent(event)
+    });
+})
+  // container where the form will appear once button is clicked
+  const addEventButton = document.querySelector("#AddEvent__button--id")
+  // event listener to render add event form when button is clicked
+  addEventButton.addEventListener("click", event => {
   // render the add event form when button is clicked
   dom.renderAddEventFormToDom()
   // id of submit button on rendered add new event form
