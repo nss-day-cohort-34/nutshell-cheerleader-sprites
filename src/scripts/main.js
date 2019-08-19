@@ -88,21 +88,39 @@ const displayEvents = () => {
   dom.renderAddEventButtonToDom()
   // GET data
   data.getEventData("events").then(parsedEvents => {
+    const displayEventsContainer = document.querySelector("#display__events")
+    displayEventsContainer.innerHTML = ""
     parsedEvents.forEach(event => {
-      const displayEventsContainer = document.querySelector("#display__events")
       displayEventsContainer.innerHTML += factory.createEventComponent(event)
     });
-})
+    })
+  // event listener on delete
+  const displayEventsContainer = document.querySelector("#display__events")
+  displayEventsContainer.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteEvent--")) {
+      const eventId = event.target.id.split("--")[1]
+      data.deleteEventData("events", eventId)
+        .then(()=> data.getEventData("events"))
+        .then(parsedEvents => {
+          const displayEventsContainer = document.querySelector("#display__events")
+          displayEventsContainer.innerHTML = ""
+          console.log("parsedEvents:", parsedEvents);
+          parsedEvents.forEach(event => {
+            displayEventsContainer.innerHTML += factory.createEventComponent(event)
+          });
+          })
+    }
+  })
   // container where the form will appear once button is clicked
   const addEventButton = document.querySelector("#AddEvent__button--id")
   // event listener to render add event form when button is clicked
   addEventButton.addEventListener("click", event => {
-  // render the add event form when button is clicked
-  dom.renderAddEventFormToDom()
-  // id of submit button on rendered add new event form
-  const addEventSubmitButton = document.querySelector("#addEvent__submit")
-  // eventlistener on add event form submit button
-  addEventSubmitButton.addEventListener("click", event => {
+    // render the add event form when button is clicked
+    dom.renderAddEventFormToDom()
+    // id of submit button on rendered add new event form
+    const addEventSubmitButton = document.querySelector("#addEvent__submit")
+    // eventlistener on add event form submit button
+    addEventSubmitButton.addEventListener("click", event => {
     // get reference to input fields
     const eventName = document.querySelector("#eventName")
     const eventDate = document.querySelector("#eventDate")
@@ -111,8 +129,17 @@ const displayEvents = () => {
     const createEventsObj = factory.createEventInputObj(activeUser, eventName.value, eventDate.value, eventLocation.value)
     // invoke function to post data below
     data.saveNewEventData("events", createEventsObj)
+    .then(()=> data.getEventData("events"))
+        .then(parsedEvents => {
+          const displayEventsContainer = document.querySelector("#display__events")
+          displayEventsContainer.innerHTML = ""
+          console.log("parsedEvents:", parsedEvents);
+          parsedEvents.forEach(event => {
+            displayEventsContainer.innerHTML += factory.createEventComponent(event)
+          });
+          })
+    });
   });
-});
 }
 
 

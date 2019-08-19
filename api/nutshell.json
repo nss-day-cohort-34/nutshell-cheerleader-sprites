@@ -31,16 +31,7 @@
       "id": 7
     }
   ],
-  "news": [
-    {
-      "id": 1,
-      "userId": "",
-      "url": "",
-      "timestamp": "",
-      "title": "",
-      "summary": ""
-    }
-  ],
+  "news": [],
   "messages": [
     {
       "id": 1,
@@ -53,19 +44,12 @@
     {
       "id": 1,
       "userId": 1,
-      "name": "trail run",
-      "date": "8-20-2019",
-      "location": "Percy Warner Park"
-    },
-    {
-      "id": 1,
-      "userId": 1,
       "name": "Yoga",
       "date": "8-22-2019",
       "location": "Jackalope Brewery"
     },
     {
-      "id": 1,
+      "id": 2,
       "userId": 1,
       "name": "Preds Fest",
       "date": "9-29-2019",
@@ -73,17 +57,31 @@
     },
     {
       "userId": "4",
-      "name": "swimming",
-      "date": "2019-08-21",
-      "location": "pool",
+      "name": "nashJS meetup",
+      "date": "2019-08-28",
+      "location": "campaign monitor",
       "id": 3
     },
     {
       "userId": "4",
       "name": "hot yoga",
-      "date": "2019-08-26",
+      "date": "2019-08-28",
       "location": "nuPower",
       "id": 4
+    },
+    {
+      "userId": "4",
+      "name": "testing",
+      "date": "2019-08-19",
+      "location": "here",
+      "id": 5
+    },
+    {
+      "userId": "4",
+      "name": "test again",
+      "date": "2019-08-20",
+      "location": "here",
+      "id": 6
     }
   ],
   "tasks": [

@@ -45,12 +45,11 @@ createAddEventsButton: () => {
             Create New Event Here
         </header>
         <div class="event__form--fieldsets">
-            <form action="" method="get">
+            
                     Event Name: <input id="eventName" type="text" name="eventName" class="event__form--input"><br>
                     Event Date: <input id="eventDate" type="date" name="eventDate" class="event__form--input"><br>
                     Event Location: <input id="eventLocation" type="text" name="eventLocation" class="event__form--input"><br>
-                <input id="addEvent__submit" type="submit" value="Submit">
-            </form>
+                <button id="addEvent__submit">Submit</button>
         </div>
     </section>
 </div> 

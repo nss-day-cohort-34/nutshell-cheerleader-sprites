@@ -58,10 +58,12 @@ const data = Object.create({
         return fetch(`http://localhost:8088/${resource}`)
             .then(response => response.json());
     },
-
-
-
-
+    deleteEventData: (resource, resourceId) => {
+        return fetch(`http://localhost:8088/${resource}/${resourceId}`, {
+            method: "DELETE"
+        })
+            .then(response => response.json())
+    },
 
     // ==================== News Section =====================
 
