@@ -1,6 +1,6 @@
 import factory from "./factory.js"
 
-const dom = Object.create({ 
+const dom = Object.create({
 
 // ==================== Users Section =====================
 

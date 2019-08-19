@@ -53,6 +53,7 @@ loginButton.addEventListener("click", event => {
         console.log(sessionStorage.activeUser);
 
         // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
+        displayEvents()
       }
     });
 
@@ -81,13 +82,29 @@ loginButton.addEventListener("click", event => {
 // ==================== Friendships Section =====================
 
 // ==================== Events Section =====================
+const displayEvents = () => {
+  dom.renderAddEventButtonToDom()
 // container where the form will appear once button is clicked
-const addEventButton = document.querySelector("#AddEvent__button")
+const addEventButton = document.querySelector("#AddEvent__button--id")
 // event listener to render add event form when button is clicked
 addEventButton.addEventListener("click", event => {
   // render the add event form when button is clicked
   dom.renderAddEventFormToDom()
+  // id of submit button on rendered add new event form
+  const addEventSubmitButton = document.querySelector("#addEvent__submit")
+  // eventlistener on add event form submit button
+  addEventSubmitButton.addEventListener("click", event => {
+    // get reference to input fields
+    const eventName = document.querySelector("#eventName")
+    const eventDate = document.querySelector("#eventDate")
+    const eventLocation = document.querySelector("#eventLocation")
+    const activeUser = sessionStorage.activeUser
+    const createEventsObj = factory.createEventInputObj(activeUser, eventName.value, eventDate.value, eventLocation.value)
+    // invoke function to post data below
+    data.saveNewEventData("events", createEventsObj)
+  });
 });
+}
 
 
 

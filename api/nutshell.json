@@ -31,16 +31,16 @@
       "id": 7
     }
   ],
-  "news": [ 
-  {
-    "id": 1,
-    "userId":"",
-    "url": "",
-    "timestamp":"",
-    "title":"",
-    "summary":""
-  }
-],
+  "news": [
+    {
+      "id": 1,
+      "userId": "",
+      "url": "",
+      "timestamp": "",
+      "title": "",
+      "summary": ""
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -70,13 +70,20 @@
       "name": "Preds Fest",
       "date": "9-29-2019",
       "location": "Bridgestone Arena"
+    },
+    {
+      "userId": "4",
+      "name": "swimming",
+      "date": "2019-08-21",
+      "location": "pool",
+      "id": 3
     }
   ],
   "tasks": [
     {
       "id": 1,
       "userId": 1,
-      "taskName": "",  
+      "taskName": "",
       "taskDate": "",
       "completed": true
     }

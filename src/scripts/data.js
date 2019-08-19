@@ -32,7 +32,7 @@ const data = Object.create({
             body: JSON.stringify(object)
         })
             .then(response => response.json())
-    }
+    },
 
     // ==================== Friendships Section =====================
 
@@ -43,8 +43,17 @@ const data = Object.create({
 
 
     // ==================== Events Section =====================
-
-
+    // function to post new event input info to json database
+    saveNewEventData: (resource, object) => {
+        return fetch(`http://localhost:8088/${resource}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(object)
+        })
+            .then(response => response.json());
+    }
 
 
 

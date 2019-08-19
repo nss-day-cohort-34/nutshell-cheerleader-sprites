@@ -29,7 +29,7 @@ createAddEventsButton: () => {
     return `
     <div class="addEvent__button">
         <section class="addEvent__button">
-            <button id="AddEvent__button">
+            <button id="AddEvent__button--id">
             Add New Event
             </button>
         </section>
@@ -42,20 +42,30 @@ createAddEventsButton: () => {
  <div class="addEvent__form--div" >   
     <section class="addEvent__form">
         <header class="addEvent__form--title">
-            Create New Event
+            Create New Event Here
         </header>
         <div class="event__form--fieldsets">
             <form action="" method="get">
-                    Event Name: <input type="text" name="eventName" class="event__form--input"><br>
-                    Event Date: <input type="date" name="eventDate" class="event__form--input"><br>
-                    Event Location: <input type="text" name="eventLocation" class="event__form--input"><br>
-                <input type="submit" value="Submit">
+                    Event Name: <input id="eventName" type="text" name="eventName" class="event__form--input"><br>
+                    Event Date: <input id="eventDate" type="date" name="eventDate" class="event__form--input"><br>
+                    Event Location: <input id="eventLocation" type="text" name="eventLocation" class="event__form--input"><br>
+                <input id="addEvent__submit" type="submit" value="Submit">
             </form>
         </div>
     </section>
 </div> 
 `
+},
+// function to create event object
+ createEventInputObj: (userIdInput, nameInput, dateInput, locationInput) => {
+    return {
+        userId: userIdInput,
+        name: nameInput,
+        date: dateInput,
+        location: locationInput,
+    }
 }
+
 
 
 
