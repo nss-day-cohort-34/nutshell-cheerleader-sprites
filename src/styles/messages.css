@@ -3,3 +3,17 @@
 .message--item {
     display: flex;
 }
+
+.messages--section--container {
+    width: 50%;
+    border: 2px solid #7a4b2e;
+}
+
+.messages--input--text {
+    width: 80%;
+}
+
+.message--edit {
+    width: 100px;
+    height: 50px;
+}

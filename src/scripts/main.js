@@ -62,12 +62,10 @@ loginButton.addEventListener("click", event => {
     }
   })
     .then(() => {
-      console.log("test");
       document.querySelector(".login__username").value = ""
       document.querySelector(".login__email").value = ""
 
       const landingPages = document.querySelectorAll(".landing--page");
-      console.log(landingPages);
       landingPages.forEach(page => {
         page.classList.add("hidden");
       });
@@ -201,5 +199,23 @@ const displayMessages = () => {
 
 
 };
+
+const checkLoggedIn = () => {
+  if (sessionStorage.activeUser > 0) {
+    const landingPages = document.querySelectorAll(".landing--page");
+    landingPages.forEach(page => {
+      page.classList.add("hidden");
+    });
+
+    const dashboardPages = document.querySelectorAll(".logged--in--container");
+    dashboardPages.forEach(page => {
+      page.classList.remove("hidden");
+    });
+
+    displayMessages();
+  }
+};
+
+checkLoggedIn();
 
 
