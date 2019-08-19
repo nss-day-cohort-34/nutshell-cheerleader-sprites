@@ -43,64 +43,58 @@
   ],
   "messages": [
     {
-      "id": 1,
       "userId": "1",
-      "message": "Nulla ut leo eget felis pellentesque sollicitudin.",
-      "date": "08-16-2019"
+      "message": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque semper magna eu odio consectetur egestas. Mauris arcu leo, semper nec efficitur nec, rutrum vitae sem.",
+      "date": "8/19/2019, 3:06:10 PM",
+      "id": 11
     },
     {
-      "id": 2,
+      "userId": "4",
+      "message": "Duis blandit laoreet scelerisque. Vestibulum dignissim tortor lectus, semper fringilla urna aliquam id. Nulla semper varius eros nec ultricies. Suspendisse in sodales felis.",
+      "date": "8/19/2019, 2:10:05 PM",
+      "id": 12
+    },
+    {
       "userId": "2",
-      "message": "Cras id elit vitae felis molestie venenatis",
-      "date": "08-16-2019"
+      "message": "Aenean egestas nisi vitae ipsum iaculis luctus. Donec ullamcorper tellus et viverra semper. Vestibulum a tristique dolor. ",
+      "date": "8/19/2019, 2:14:35 PM",
+      "id": 13
     },
     {
-      "id": 3,
+      "userId": "3",
+      "message": "Duis id lobortis lacus, vitae auctor erat. Nam ac sapien ultricies, eleifend lorem tristique, ultricies tellus. Fusce tortor metus, gravida quis dui a, cursus dapibus ligula.",
+      "date": "8/19/2019, 2:16:49 PM",
+      "id": 14
+    },
+    {
+      "userId": "3",
+      "message": "New message to test live updating",
+      "date": "8/19/2019, 2:54:49 PM",
+      "id": 15
+    },
+    {
+      "userId": "2",
+      "message": "Etiam convallis leo at elit viverra, ac posuere lectus scelerisque. Suspendisse lobortis faucibus massa, ac facilisis orci egestas sit amet. Ut cursus dapibus libero faucibus posuere. ",
+      "date": "8/19/2019, 2:18:48 PM",
+      "id": 16
+    },
+    {
+      "userId": "2",
+      "message": "Maecenas nec nisi hendrerit, dignissim enim in, laoreet lectus. ",
+      "date": "8/19/2019, 3:01:25 PM",
+      "id": 17
+    },
+    {
+      "userId": "2",
+      "message": "Phasellus convallis eros ac lorem semper dictum. Nam sollicitudin pharetra est, eu vestibulum lectus imperdiet et. Duis tristique rhoncus lacus, sit amet aliquam dui suscipit vitae.",
+      "date": "8/19/2019, 3:05:22 PM",
+      "id": 18
+    },
+    {
       "userId": "1",
-      "message": "Duis euismod velit vel eros feugiat, id pharetra erat ultriciess",
-      "date": "08-16-2019"
-    },
-    {
-      "id": 4,
-      "userId": "3",
-      "message": "Nulla bibendum enim sed elit suscipit, sed auctor orci consequat.",
-      "date": "08-16-2019"
-    },
-    {
-      "userId": "3",
-      "message": "This is a new message",
-      "date": "2019-08-18T18:29:17.029Z",
-      "id": 5
-    },
-    {
-      "userId": "3",
-      "message": "This is a second new message",
-      "date": "2019-08-18T18:29:36.254Z",
-      "id": 6
-    },
-    {
-      "userId": "1",
-      "message": "Cras id elit vitae felis molestie venenatis",
-      "date": "2019-08-19T16:06:03.836Z",
-      "id": 7
-    },
-    {
-      "userId": "3",
-      "message": "new message",
-      "date": "2019-08-19T16:40:05.557Z",
-      "id": 8
-    },
-    {
-      "userId": "3",
-      "message": "another new message to check data type of UserId",
-      "date": "2019-08-19T16:42:19.624Z",
-      "id": 9
-    },
-    {
-      "userId": "3",
-      "message": "Edit message test enim sed elit suscipit, sed auctor orci consequat.",
-      "date": "2019-08-19T18:55:17.373Z",
-      "id": 10
+      "message": "Proin condimentum placerat quam varius facilisis",
+      "date": "8/19/2019, 3:05:51 PM",
+      "id": 19
     }
   ],
   "events": [

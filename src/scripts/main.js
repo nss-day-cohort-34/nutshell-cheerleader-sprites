@@ -172,6 +172,34 @@ const displayMessages = () => {
       });
     }
   });
+
+  // Set initial counter for number of messages
+  let numMessages = 0;
+
+  // GET messages from database. If number of objects returned !== numMessages, there must be a new message, so re-render each message
+  const checkMessages = () => {
+
+    data.getMessages().then(parsedMessages => {
+
+      if (numMessages !== parsedMessages.length) {
+        const messageContainer = document.querySelector(".messages--list");
+        messageContainer.innerHTML = "";
+
+        parsedMessages.forEach(message => {
+          const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
+          dom.renderToDom(messageContainer, messageHTML);
+        });
+      }
+
+      // Set numMessages equal to the number of objects returned by the GET request
+      numMessages = parsedMessages.length;
+    });
+  };
+
+  // Check to see if there are new messages every 5 seconds
+  window.setInterval(checkMessages, 5000);
+
+
 };
 
 

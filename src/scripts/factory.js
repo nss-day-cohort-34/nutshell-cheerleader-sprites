@@ -49,7 +49,7 @@ const factory = Object.create({
 
 // ==================== Messages Section =====================
     createMessage: (activeUserId, messageContent) => {
-        const currentDate = new Date();
+        const currentDate = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
         return {
             userId: activeUserId,
             message: messageContent,

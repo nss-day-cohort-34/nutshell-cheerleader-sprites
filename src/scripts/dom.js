@@ -71,7 +71,7 @@ renderToDom : (location, htmlRep) => {
         const activeUser = sessionStorage.activeUser;
         return `<section class="message--item message--item--${messageObject.id}">
                     <p class="message--item--message">${messageObject.user.username}: ${messageObject.message}</p>
-                    <p class="message--item--date">Date: ${messageObject.date}</p>
+                    <p class="message--item--date">${messageObject.date}</p>
                     ${displayEditMsgButton(messageObject.userId, activeUser, messageObject)}
                 </section>`;
     }
