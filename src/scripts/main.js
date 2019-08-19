@@ -4,6 +4,7 @@
 // ==================== Import modules ====================
 import data from "./data.js";
 import factory from "./factory.js";
+import dom from "./dom";
 
 // ==================== Users Section =====================
 
@@ -80,6 +81,15 @@ loginButton.addEventListener("click", event => {
 // ==================== Friendships Section =====================
 
 // ==================== Events Section =====================
+// container where the form will appear once button is clicked
+const addEventButton = document.querySelector("#AddEvent__button")
+// event listener to render add event form when button is clicked
+addEventButton.addEventListener("click", event => {
+  // render the add event form when button is clicked
+  dom.renderAddEventFormToDom()
+});
+
+
 
 // ==================== News Section =====================
 

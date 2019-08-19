@@ -53,9 +53,23 @@
     {
       "id": 1,
       "userId": 1,
-      "name": "",
-      "date": "",
-      "location": ""
+      "name": "trail run",
+      "date": "8-20-2019",
+      "location": "Percy Warner Park"
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Yoga",
+      "date": "8-22-2019",
+      "location": "Jackalope Brewery"
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Preds Fest",
+      "date": "9-29-2019",
+      "location": "Bridgestone Arena"
     }
   ],
   "tasks": [
