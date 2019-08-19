@@ -99,7 +99,7 @@ const displayMessages = () => {
 
     parsedMessages.forEach(message => {
       const messageContainer = document.querySelector(".messages--list");
-      const messageHTML = dom.createMessageHTML(message);
+      const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
       dom.renderToDom(messageContainer, messageHTML);
 
     });
