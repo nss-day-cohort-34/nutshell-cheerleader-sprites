@@ -88,20 +88,20 @@ loginButton.addEventListener("click", event => {
 // ==================== Tasks Section =====================
 
 // ==================== Messages Section =====================
+
 // displayMessages contains all functionality that should be executed when a successful login is detected
 const displayMessages = () => {
+
   // Render message container to DOM with input fields
   dom.createMessagesForm();
 
   // Get all messages from the database, create HTML Representations and render them to the DOM
   data.getMessages().then(parsedMessages => {
-    console.log(parsedMessages);
 
     parsedMessages.forEach(message => {
       const messageContainer = document.querySelector(".messages--list");
       const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
       dom.renderToDom(messageContainer, messageHTML);
-
     });
   });
 
@@ -109,31 +109,69 @@ const displayMessages = () => {
   const sendMessageButton = document.querySelector(".messages--input--button");
   sendMessageButton.addEventListener("click", event => {
     let messageValue = document.querySelector(".messages--input--text").value;
-    let currentUser = sessionStorage.activeUser;
+    let hiddenInputValue = document.querySelector(".message--input--hidden").value;
 
-    const messageObject = factory.createMessage(currentUser, messageValue);
-    data.saveData("messages", messageObject)
+    // Create new message object with the input field value and activeUser id
+    const messageObject = factory.createMessage(sessionStorage.activeUser, messageValue);
+
+    if (hiddenInputValue === "") {
+
+      // If hiddenInput is blank, post to the database as a new message
+      data.saveData("messages", messageObject)
+        .then(data.getMessages)
+        .then(parsedMessages => {
+          const messageContainer = document.querySelector(".messages--list");
+          messageContainer.innerHTML = "";
+
+          parsedMessages.forEach(message => {
+            const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
+            dom.renderToDom(messageContainer, messageHTML);
+          });
+        });
+    } else {
+
+      // hiddenInput is not blank, put to the database to edit the existing message
+      const messageId = hiddenInputValue;
+      data.editData("messages", messageId, messageObject)
       .then(data.getMessages)
       .then(parsedMessages => {
         const messageContainer = document.querySelector(".messages--list");
         messageContainer.innerHTML = "";
 
         parsedMessages.forEach(message => {
-          const messageHTML = dom.createMessageHTML(message);
+          const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
           dom.renderToDom(messageContainer, messageHTML);
         });
       });
 
+      // Reset hiddenInput value to empty string
+      hiddenInputValue = "";
+    }
+
+
+
   });
 
-  // data.saveJournalEntry(newEntry)
-  //   .then(data.getJournalEntries)
-  //   .then(parsedEntries => {
-  //     parsedEntries.forEach(entry => {
-  //       const HTMLRepresentation = entryComponent.createEntry(entry);
-  //       entriesDOM.addHTML(HTMLRepresentation);
-  //     });
-  //   });
+  // Listen to messagesList for clicks on an edit button
+  const messagesList = document.querySelector(".messages--list");
+  messagesList.addEventListener("click", event => {
+
+    // If edit button is clicked, GET the message that was clicked on from the database
+    if (event.target.classList[1].startsWith("message--edit")) {
+      const hiddenInput = document.querySelector(".message--input--hidden");
+      const messageInput = document.querySelector(".messages--input--text");
+      const messageID = event.target.classList[1].split("--")[2];
+
+      const endpoint = `messages/${messageID}`;
+      data.getData(endpoint).then(message => {
+
+        // Set hiddenInput value equal to message id and messageInput to the messages text
+        hiddenInput.value = message.id;
+        messageInput.value = message.message;
+
+      });
+    }
+  });
 };
 
 

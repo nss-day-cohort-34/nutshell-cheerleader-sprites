@@ -44,25 +44,25 @@
   "messages": [
     {
       "id": 1,
-      "userId": 1,
+      "userId": "1",
       "message": "Nulla ut leo eget felis pellentesque sollicitudin.",
       "date": "08-16-2019"
     },
     {
       "id": 2,
-      "userId": 2,
+      "userId": "2",
       "message": "Cras id elit vitae felis molestie venenatis",
       "date": "08-16-2019"
     },
     {
       "id": 3,
-      "userId": 1,
+      "userId": "1",
       "message": "Duis euismod velit vel eros feugiat, id pharetra erat ultriciess",
       "date": "08-16-2019"
     },
     {
       "id": 4,
-      "userId": 3,
+      "userId": "3",
       "message": "Nulla bibendum enim sed elit suscipit, sed auctor orci consequat.",
       "date": "08-16-2019"
     },
@@ -77,6 +77,30 @@
       "message": "This is a second new message",
       "date": "2019-08-18T18:29:36.254Z",
       "id": 6
+    },
+    {
+      "userId": "1",
+      "message": "Cras id elit vitae felis molestie venenatis",
+      "date": "2019-08-19T16:06:03.836Z",
+      "id": 7
+    },
+    {
+      "userId": "3",
+      "message": "new message",
+      "date": "2019-08-19T16:40:05.557Z",
+      "id": 8
+    },
+    {
+      "userId": "3",
+      "message": "another new message to check data type of UserId",
+      "date": "2019-08-19T16:42:19.624Z",
+      "id": 9
+    },
+    {
+      "userId": "3",
+      "message": "Edit message test enim sed elit suscipit, sed auctor orci consequat.",
+      "date": "2019-08-19T18:55:17.373Z",
+      "id": 10
     }
   ],
   "events": [

@@ -48,7 +48,7 @@ renderToDom : (location, htmlRep) => {
         const messagesForm =   `<section class="messages--section--container">
                                     <section class="messages--list"></section>
                                     <section class="messages--input">
-                                        <input type="hidden" class="messageId" value="" />
+                                        <input type="hidden" class="message--input--hidden" value=""/>
                                         <input type="text" class="messages--input--text" placeholder="type message here">
                                         <button class="messages--input--button">Send</button>
                                     </section>
@@ -58,9 +58,9 @@ renderToDom : (location, htmlRep) => {
         messagesContainer.innerHTML += messagesForm;
     },
 
-    displayEditMsgButton: (messageUserId, activeUser) => {
+    displayEditMsgButton: (messageUserId, activeUser, messageObject) => {
         if (messageUserId === activeUser) {
-            return `<button class="message--edit message--edit--${messageUserId}">Edit</button>`;
+            return `<button class="message--edit message--edit--${messageObject.id}">Edit</button>`;
         } else {
             return "";
         }
@@ -72,7 +72,7 @@ renderToDom : (location, htmlRep) => {
         return `<section class="message--item message--item--${messageObject.id}">
                     <p class="message--item--message">${messageObject.user.username}: ${messageObject.message}</p>
                     <p class="message--item--date">Date: ${messageObject.date}</p>
-                    ${displayEditMsgButton(messageObject.userId, activeUser)}
+                    ${displayEditMsgButton(messageObject.userId, activeUser, messageObject)}
                 </section>`;
     }
 });
