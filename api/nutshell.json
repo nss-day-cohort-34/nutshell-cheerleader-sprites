@@ -29,18 +29,23 @@
       "username": "jenny",
       "email": "jenny@gmail.com",
       "id": 7
+    },
+    {
+      "username": "KevoDaDon",
+      "email": "fake@gmail.com",
+      "id": 8
     }
   ],
-  "news": [ 
-  {
-    "id": 1,
-    "userId":"",
-    "url": "",
-    "timestamp":"",
-    "title":"",
-    "summary":""
-  }
-],
+  "news": [
+    {
+      "id": 1,
+      "userId": "",
+      "url": "",
+      "timestamp": "",
+      "title": "",
+      "summary": ""
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -62,9 +67,23 @@
     {
       "id": 1,
       "userId": 1,
-      "taskName": "",  
-      "taskDate": "",
-      "completed": true
+      "taskName": "Wash clothes",
+      "taskDate": "08/12/19",
+      "completed": false
+    },
+    {
+      "taskName": "testing true or false",
+      "taskDate": "2019-08-19",
+      "userId": "8",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "taskName": "input clear test",
+      "taskDate": "2019-08-19",
+      "userId": "2",
+      "completed": false,
+      "id": 3
     }
   ]
 }

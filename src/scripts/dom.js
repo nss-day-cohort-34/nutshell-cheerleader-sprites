@@ -1,49 +1,18 @@
-const dom = Object.create({ 
+const dom = Object.create({
+  // ==================== Users Section =====================
 
-// ==================== Users Section =====================
+  // ==================== Friendships Section =====================
 
+  // ==================== Events Section =====================
+  renderToDom: (location, htmlRep) => {
+    location.innerHTML += htmlRep;
+  },
 
+  // ==================== News Section =====================
 
+  // ==================== Tasks Section =====================
+  placeToPutList: document.querySelector("#taskList")
+  // ==================== Messages Section =====================
+});
 
-
-
-
-// ==================== Friendships Section =====================
-
-
-
-
-
-
-
-// ==================== Events Section =====================
-renderToDom : (location, htmlRep) => {
-    location.innerHTML += htmlRep
-}
-
-
-
-
-
-
-// ==================== News Section =====================
-
-
-
-
-
-
-
-// ==================== Tasks Section =====================
-
-
-
-
-
-
-
-// ==================== Messages Section =====================
-
-})
-
-export default dom
+export default dom;

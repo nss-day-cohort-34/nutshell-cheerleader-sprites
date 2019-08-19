@@ -1,0 +1,147 @@
+/* ------------ task list ------------ */
+
+/* ------------ container ------------ */
+.taskContainer {
+  padding: 10px;
+  width: 380px;
+  /* margin: 0 auto; */
+  /* border: 10px solid darkmagenta; */
+}
+
+/* ------------ header ------------ */
+.taskHeader {
+  width: 384px;
+  height: 200px;
+  background-image: url("/src/img/chipmunk-cup.jpg");
+  /* background-size: 100% 200%; */
+  background-repeat: no-repeat;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  background-size: cover;
+}
+.taskClear {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.taskClear i {
+  font-size: 30px;
+  color: #cba257;
+}
+
+.taskClear i:hover {
+  cursor: pointer;
+  text-shadow: 1px 3px 5px #000;
+  transform: rotate(45deg);
+  color: #50d924;
+}
+
+#taskDate {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: springgreen;
+  font-size: 25px;
+  font-family: "Raleway", cursive;
+  text-transform: capitalize;
+}
+
+/* ------------ content ------------ */
+.taskContent {
+  width: 384px;
+  height: 300px;
+  max-height: 300px;
+  background-color: #fff;
+  overflow: auto;
+}
+
+.taskContent::-webkit-scrollbar {
+  display: none;
+}
+
+.taskContent ul {
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  width: 380px;
+  height: 45px;
+  min-height: 45px;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item i.co {
+  position: absolute;
+  font-size: 15px;
+  padding-left: 5px;
+  left: 15px;
+  top: 10px;
+}
+
+.item i.co:hover {
+  cursor: pointer;
+}
+
+.far-check-circle {
+  color: #6eb200;
+}
+
+.item p.text {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  left: 50px;
+  top: 5px;
+  background-color: #fff;
+  max-width: 285px;
+}
+
+.lineThrough {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.item i.de {
+  position: absolute;
+  font-size: 25px;
+  right: 15px;
+  top: 10px;
+  color: #cba257;
+}
+
+.item i.de:hover {
+  color: #50d924;
+  cursor: pointer;
+}
+
+/* ------------ add item ------------ */
+.add-task fieldset {
+  position: relative;
+  width: 361px;
+  height: 40px;
+  background-color: #fff;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-task button {
+  position: absolute;
+  font-size: 16px;
+  color: #cba257;
+  margin-left: 5px;
+}
+.add-task button:hover {
+  color: #50d924;
+  cursor: pointer;
+}
+
+/* ------------ end task list ------------ */
