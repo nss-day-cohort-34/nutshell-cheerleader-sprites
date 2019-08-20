@@ -98,13 +98,8 @@ const clear = document.querySelector(".taskClear");
 const dateElement = document.getElementById("taskDate");
 const input = document.getElementById("input-task");
 const date = document.getElementById("task-input-Date");
+const taskContainer = document.getElementById("taskList");
 const hiddenDomEdit = document.querySelector("#hiddenEditFieldId");
-
-// input selectors
-//classes names
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINE_THROUGH = "lineThrough";
 
 document.querySelector(".task_button").addEventListener("click", () => {
   const userID = sessionStorage.activeUser;
@@ -116,32 +111,77 @@ document.querySelector(".task_button").addEventListener("click", () => {
     userID,
     false
   );
-  data
-    .saveData("tasks", newTaskObj)
-    .then(() => data.getData("tasks"))
-    .then(tasks => {
-      dom.placeToPutList.value = "";
-      for (const task of tasks) {
-        const newTaskHTML = factory.createTaskHtml(task);
-        dom.renderToDom(dom.placeToPutList, newTaskHTML);
-      }
-    })
-    .then(() => {
-      //clears the input fields
-      input.value = "";
-      date.value = "";
-    });
+  if (hiddenDomEdit.value !== "") {
+    data
+      .editData("tasks", hiddenDomEdit.value, newTaskObj)
+      .then(() => data.getData("tasks"))
+      .then(tasks => {
+        dom.placeToPutList.innerHTML = "";
+        for (const task of tasks) {
+          const newTaskHTML = factory.createTaskHtml(task);
+          dom.renderToDom(dom.placeToPutList, newTaskHTML);
+        }
+      })
+      .then((hiddenDomEdit.value = ""))
+      .then(() => {
+        //clears the input fields
+        input.value = "";
+        date.value = "";
+      });
+  } else
+    data
+      .saveData("tasks", newTaskObj)
+      .then(() => data.getData("tasks"))
+      .then(tasks => {
+        dom.placeToPutList.innerHTML = "";
+        for (const task of tasks) {
+          const newTaskHTML = factory.createTaskHtml(task);
+          dom.renderToDom(dom.placeToPutList, newTaskHTML);
+        }
+      })
+      .then(() => {
+        //clears the input fields
+        input.value = "";
+        date.value = "";
+      });
+});
 
-  // if (hiddenDomEdit.value !== "") {
-  //   data
-  //     .editData(taskObj, hiddenDomEdit.value)
-  //     .then(() => data.getData)
-  //     .then((hiddenDomEdit.value = ""));
-  // }
+//complete todo
+
+//  check off and edit buttons
+taskContainer.addEventListener("click", event => {
+  console.log("hi");
+  if (event.target.id.startsWith("check")) {
+    dom.placeToPutList.innerHTML = "";
+    console.log("hi inside");
+    const checkID = event.target.id.split("_")[1];
+    console.log("checkID: ", checkID);
+
+    data
+      .deleteData("tasks", checkID)
+      .then(data.getData("tasks"))
+      .then();
+    console.log(checkID);
+  }
+  // edit button
+  if (event.target.id.startsWith("edit")) {
+    console.log("hi inside");
+    const editID = event.target.id.split("_")[1];
+    console.log("editId: ", editID);
+    data.getData(`tasks/${editID}`).then(task => {
+      hiddenDomEdit.value = task.id;
+      input.value = task.taskName;
+      date.value = task.taskDate;
+    });
+  }
 });
 
 //show todays date
-const options = { weekday: "long", month: "short", day: "numeric" };
+const options = {
+  weekday: "long",
+  month: "short",
+  day: "numeric"
+};
 const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);

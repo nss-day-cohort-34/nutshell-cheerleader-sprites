@@ -17,6 +17,13 @@ const factory = Object.create({
   // ==================== News Section =====================
 
   // ==================== Tasks Section =====================
+  //classes names
+  classobj: () => {
+    const CHECK = "fa-check-circle";
+    const UNCHECK = "fa-circle-thin";
+    const LINE_THROUGH = "lineThrough";
+  },
+
   createTaskObj: (taskName, taskDate, userId, completed) => {
     return {
       taskName: taskName,
@@ -29,9 +36,9 @@ const factory = Object.create({
   createTaskHtml: taskObj => {
     return `
     <li class="item">
-    <i class="far fa-circle co" job="complete" id="0"></i>
+    <i class="far fa-circle co" job="complete" id="check_${taskObj.id}"></i>
     <p class="text">${taskObj.taskName} due: ${taskObj.taskDate} </p>
-   <i class="fas fa-user-edit de" job="edit" id="0"></i>
+   <i class="fas fa-user-edit de" job="edit" id="edit_${taskObj.id}"></i>
    </li>`;
   }
   // ==================== Messages Section =====================
