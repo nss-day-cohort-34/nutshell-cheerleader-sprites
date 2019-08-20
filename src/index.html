@@ -1,176 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles/landingPage.css" />
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/taskList.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Bangers|Coming+Soon|Lacquer|Special+Elite&display=swap"
-      rel="stylesheet"
-    />
-    <title>Nutshell</title>
-  </head>
 
-  <body>
-    <!-- <article class="landingPage--container"> -->
-    <section class="intro landing--page">
-      <div class="inner">
-        <div class="content">
-          <h1>Welcome to Nutshell!!</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles/landingPage.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/taskList.css" />
+  <link rel="stylesheet" href="styles/messages.css" />
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Coming+Soon|Lacquer|Special+Elite&display=swap"
+    rel="stylesheet" />
+  <title>Nutshell</title>
+</head>
 
-          <a href="#login__container">
-            <p>Register/Login</p>
-          </a>
-        </div>
-        <!-- end of content  -->
+<body>
+  <!-- <article class="landingPage--container"> -->
+  <section class="intro landing--page">
+    <div class="inner">
+      <div class="content">
+        <h1>Welcome to Nutshell!!</h1>
+
+        <a href="#login__container">
+          <p>Register/Login</p>
+        </a>
       </div>
-      <!-- end of inner  -->
-    </section>
-    <!-- end of section  -->
-    <div class="userStatement landing--page" id="userStatement">
-      <h1>🌰What is Nutshell?🌰</h1>
-      <img
-        class="cheerleaderImage"
-        src="/src/img/cheerleader.gif "
-        alt="animated cheerleader"
-      />
-      <p>
-        🌰 Nutshell is a new product offering users a chance to connect with
-        their friends in a new and nutty way. It's a dashboard for people to
-        organize their daily tasks, events, news article, friends, and chat
-        messages.
-      </p>
+      <!-- end of content  -->
     </div>
-    <!-- end of user statement div  -->
-    <article class="login__container landing--page" id="login__container">
-      <div class="login__container--div">
-        <input type="text" class="login__username" placeholder="username" />
-        <input type="email" class="login__email" placeholder="email" />
-        <button type="submit" class="register__button">
-          Register New User
-        </button>
-        <button type="submit" class="login__button">Login</button>
-      </div>
-    </article>
-    <!-- </article> -->
-    <!-- end of landing page  -->
-    <article class="logged--in--container hidden">
-      <h1>Hello User!</h1>
-      <!-- need to insert user's name into the h1 to make it more welcoming -->
-      <section id="section--container">
-        <!-- use the section--container to flex  -->
-        <div id="flexed--sections">
-          <aside id="event--section">
-            <h2>Event Placeholder</h2>
-            <!-- will inject content with js  -->
-          </aside>
-          <!-- end of events  -->
-          <aside id="news--section">
-            <section id="newsDisplay"></section>
-            <form id="newsForm">
-              <fieldset>
-                <input type="hidden" id="newsID" value="" />
-              </fieldset>
-              <fieldset>
-                <label for="newsDate">News Date</label>
-                <input type="date" id="newsDate" />
-              </fieldset>
-              <fieldset>
-                <label for="newsTitle">Title of News Article</label>
-                <input type="text" id="newsTitle" />
-              </fieldset>
-              <fieldset>
-                <label for="newsSummary">Summary of Article</label>
-                <textarea type="text" id="newsSummary"></textarea>
-              </fieldset>
-              <fieldset>
-                <label for="newsURL">Link to Article</label>
-                <input type="text" id="newsURL" />
-              </fieldset>
-            </form>
-            <button type="submit" id="newsSubmitButton">
-              Post News Article
-            </button>
-            <!-- will inject content with js  -->
-          </aside>
-          <!-- end of news  -->
-          <div id="task--section">
-            <h2>task Placeholder</h2>
-            <!-- task list begins here  -->
+    <!-- end of inner  -->
+  </section>
+  <!-- end of section  -->
+  <div class="userStatement landing--page" id="userStatement">
+    <h1>🌰What is Nutshell?🌰</h1>
+    <img class="cheerleaderImage" src="/src/img/cheerleader.gif " alt="animated cheerleader" />
+    <p>
+      🌰 Nutshell is a new product offering users a chance to connect with
+      their friends in a new and nutty way. It's a dashboard for people to
+      organize their daily tasks, events, news article, friends, and chat
+      messages.
+    </p>
+  </div>
+  <!-- end of user statement div  -->
+  <article class="login__container landing--page" id="login__container">
+    <div class="login__container--div">
+      <input type="text" class="login__username" placeholder="username" />
+      <input type="email" class="login__email" placeholder="email" />
+      <button type="submit" class="register__button">
+        Register New User
+      </button>
+      <button type="submit" class="login__button">Login</button>
+    </div>
+  </article>
+  <!-- </article> -->
+  <!-- end of landing page  -->
+  <article class="logged--in--container hidden">
+    <h1>Hello User!</h1>
+    <!-- need to insert user's name into the h1 to make it more welcoming -->
+    <section id="section--container">
+      <!-- use the section--container to flex  -->
+      <div id="flexed--sections">
+        <aside id="event--section">
+          <h2>Event Placeholder</h2>
+          <div id="display__events"></div>
+          <!-- will inject content with js  -->
+        </aside>
+        <!-- end of events  -->
+        <aside id="news--section">
+          <section id="newsDisplay"></section>
+          <form id="newsForm">
+            <fieldset>
+              <input type="hidden" id="newsID" value="" />
+            </fieldset>
+            <fieldset>
+              <label for="newsDate">News Date</label>
+              <input type="date" id="newsDate" />
+            </fieldset>
+            <fieldset>
+              <label for="newsTitle">Title of News Article</label>
+              <input type="text" id="newsTitle" />
+            </fieldset>
+            <fieldset>
+              <label for="newsSummary">Summary of Article</label>
+              <textarea type="text" id="newsSummary"></textarea>
+            </fieldset>
+            <fieldset>
+              <label for="newsURL">Link to Article</label>
+              <input type="text" id="newsURL" />
+            </fieldset>
+          </form>
+          <button type="submit" id="newsSubmitButton">
+            Post News Article
+          </button>
+          <!-- will inject content with js  -->
+        </aside>
+        <!-- end of news  -->
+        <div id="task--section">
+          <h2>task Placeholder</h2>
+          <!-- task list begins here  -->
 
-            <div class="taskContainer">
-              <input type="hidden" id="hiddenEditFieldId" value="" />
-              <div class="taskHeader">
-                <div class="taskClear">
-                  <i class="fas fa-trash"></i>
-                </div>
-                <!-- clear button -->
-                <div id="taskDate"></div>
+          <div class="taskContainer">
+            <input type="hidden" id="hiddenEditFieldId" value="" />
+            <div class="taskHeader">
+              <div class="taskClear">
+                <i class="fas fa-trash"></i>
               </div>
-              <!-- end of header -->
+              <!-- clear button -->
+              <div id="taskDate"></div>
+            </div>
+            <!-- end of header -->
 
-              <div class="taskContent">
-                <ul id="taskList">
-                  <!-- <li class="item">
+            <div class="taskContent">
+              <ul id="taskList">
+                <!-- <li class="item">
                         <i class="far fa-circle co" job="complete" id="0"></i>
                       <p class="text">Wash clothes due: 08/12/19</p>
                      <i class="fas fa-user-edit de" job="edit" id="0"></i>
                 </li> -->
-                </ul>
-              </div>
-              <!-- end of content -->
-              <div class="add-task">
-                <fieldset>
-                  <label for="input-task">New Task:</label>
-                  <input type="text" id="input-task" placeholder="Add a task" />
-                </fieldset>
-                <fieldset>
-                  <label for="task-input-Date">Complete By:</label>
-                  <input
-                    type="date"
-                    name="task-input-Date"
-                    id="task-input-Date"
-                  />
-                  <button class="task_button">
-                    <i class="fas fa-share-square"></i>
-                  </button>
-                  <!-- end of button -->
-                </fieldset>
-                <!-- end of input fieldsets  -->
-              </div>
-              <!-- end of add task div  -->
+              </ul>
             </div>
-            <!-- end of task container  -->
+            <!-- end of content -->
+            <div class="add-task">
+              <fieldset>
+                <label for="input-task">New Task:</label>
+                <input type="text" id="input-task" placeholder="Add a task" />
+              </fieldset>
+              <fieldset>
+                <label for="task-input-Date">Complete By:</label>
+                <input type="date" name="task-input-Date" id="task-input-Date" />
+                <button class="task_button">
+                  <i class="fas fa-share-square"></i>
+                </button>
+                <!-- end of button -->
+              </fieldset>
+              <!-- end of input fieldsets  -->
+            </div>
+            <!-- end of add task div  -->
           </div>
-          <!-- end of task  -->
-          <aside id="messages--section">
-            <h2>Messages Placeholder</h2>
-            <!-- will inject content with js  -->
-          </aside>
-          <!-- end of the friends  -->
+          <!-- end of task container  -->
         </div>
-        <!-- end of flexed div -->
-      </section>
-      <!-- end of article logged in  -->
-    </article>
-    <!-- end of article  -->
-    <footer class="main-footer">
-      <p>
-        <span
-          >&copy;2019
-          <a
-            href="https://github.com/nss-day-cohort-34/nutshell-cheerleader-sprites"
-            >Allie🧚‍♀️ Curtis🧚‍♂️ Kevin🧚‍♂️ Joe🧚‍♂️ AKA: Cheerleader Sprites</a
-          >
-          Nutshell.</span
-        >
-      </p>
-    </footer>
+        <!-- end of task  -->
+        <aside id="messages--section">
+          <h2>Messages Placeholder</h2>
+          <!-- will inject content with js  -->
+        </aside>
+        <!-- end of the friends  -->
+      </div>
+      <!-- end of flexed div -->
+    </section>
+    <!-- end of article logged in  -->
+  </article>
+  <!-- end of article  -->
+  <footer class="main-footer">
+    <p>
+      <span>&copy;2019
+        <a href="https://github.com/nss-day-cohort-34/nutshell-cheerleader-sprites">Allie🧚‍♀️ Curtis🧚‍♂️ Kevin🧚‍♂️
+          Joe🧚‍♂️ AKA: Cheerleader Sprites</a>
+        Nutshell.</span>
+    </p>
+  </footer>
 
-    <article id="container"></article>
-    <script src="https://kit.fontawesome.com/7b42dc2270.js"></script>
-  </body>
+  <article id="container"></article>
+  <script src="https://kit.fontawesome.com/7b42dc2270.js"></script>
+</body>
+
 </html>

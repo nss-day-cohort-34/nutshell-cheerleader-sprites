@@ -1,0 +1,113 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "tom",
+      "email": "tom@myspace.com"
+    },
+    {
+      "id": 2,
+      "username": "curtis",
+      "email": "curtis@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "joe",
+      "email": "joe@gmail.com"
+    },
+    {
+      "username": "allie",
+      "email": "allie@gmail.com",
+      "id": 4
+    },
+    {
+      "username": "kevin",
+      "email": "kevin@gmail.com",
+      "id": 5
+    }
+  ],
+  "news": [
+    {
+      "url": "test.com",
+      "date": "2019-08-20",
+      "title": "test",
+      "summary": "test",
+      "id": 1
+    },
+    {
+      "url": "i need coffee",
+      "date": "2019-08-20",
+      "title": "blah blah blah",
+      "summary": "fdslkajsd;flk",
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "messaage": "",
+      "date": ""
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Yoga",
+      "date": "8-22-2019",
+      "location": "Jackalope Brewery"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Preds Fest",
+      "date": "9-29-2019",
+      "location": "Bridgestone Arena"
+    },
+    {
+      "userId": "4",
+      "name": "nashJS meetup",
+      "date": "2019-08-28",
+      "location": "campaign monitor",
+      "id": 3
+    },
+    {
+      "userId": "4",
+      "name": "hot yoga",
+      "date": "2019-08-28",
+      "location": "nuPower",
+      "id": 4
+    },
+    {
+      "userId": "4",
+      "name": "testing",
+      "date": "2019-08-19",
+      "location": "here",
+      "id": 5
+    },
+    {
+      "userId": "4",
+      "name": "test again",
+      "date": "2019-08-20",
+      "location": "here",
+      "id": 6
+    },
+    {
+      "userId": "4",
+      "name": "new event test clear",
+      "date": "2019-08-20",
+      "location": "nss",
+      "id": 7
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "taskName": "",
+      "taskDate": "",
+      "completed": true
+    }
+  ]
+}

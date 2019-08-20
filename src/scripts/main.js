@@ -55,6 +55,7 @@ loginButton.addEventListener("click", event => {
         console.log(sessionStorage.activeUser);
 
         // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
+        displayEvents()
       }
     });
 
@@ -103,6 +104,129 @@ loginButton.addEventListener("click", event => {
 // ==================== Friendships Section =====================
 
 // ==================== Events Section =====================
+// wrapped all the functions in another function
+const displayEvents = () => {
+  // first render my add event button to the dom
+  dom.renderAddEventButtonToDom()
+  // GET data
+  data.getEventData("events").then(parsedEvents => {
+    const displayEventsContainer = document.querySelector("#display__events")
+    displayEventsContainer.innerHTML = ""
+    parsedEvents.forEach(event => {
+      displayEventsContainer.innerHTML += factory.createEventComponent(event)
+    });
+  })
+  // event listener on delete
+  const displayEventsContainer = document.querySelector("#display__events")
+  displayEventsContainer.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteEvent--")) {
+      const eventId = event.target.id.split("--")[1]
+      data.deleteEventData("events", eventId)
+        .then(() => data.getEventData("events"))
+        .then(parsedEvents => {
+          const displayEventsContainer = document.querySelector("#display__events")
+          displayEventsContainer.innerHTML = ""
+          console.log("parsedEvents:", parsedEvents);
+          parsedEvents.forEach(event => {
+            displayEventsContainer.innerHTML += factory.createEventComponent(event)
+          });
+        })
+    }
+  })
+  // container where the form will appear once button is clicked
+  const addEventButton = document.querySelector("#AddEvent__button--id")
+  // event listener to render add event form when button is clicked
+  addEventButton.addEventListener("click", event => {
+    // render the add event form when button is clicked
+    dom.renderEventFormToDom()
+    // id of submit button on rendered add new event form
+    const addEventSubmitButton = document.querySelector("#addEvent__submit")
+    // eventlistener on add event form submit button
+    addEventSubmitButton.addEventListener("click", event => {
+      console.log("hello")
+      // get reference to input fields
+      const eventName = document.querySelector("#eventName")
+      const eventDate = document.querySelector("#eventDate")
+      const eventLocation = document.querySelector("#eventLocation")
+      const eventId = document.querySelector("#eventId")
+      const activeUser = sessionStorage.activeUser
+      const createEventsObj = factory.createEventInputObj(activeUser, eventName.value, eventDate.value, eventLocation.value)
+      console.log(eventId.value)
+      if (eventId.value !== "") {
+        data.editJournalEntry("events", eventId.value, createEventsObj)
+          .then(() => data.getEventData("events"))
+          .then(parsedEvents => {
+            const displayEventsContainer = document.querySelector("#display__events")
+            displayEventsContainer.innerHTML = ""
+            console.log("parsedEvents:", parsedEvents);
+            parsedEvents.forEach(event => {
+              displayEventsContainer.innerHTML += factory.createEventComponent(event)
+            });
+          })
+      } else {
+        // invoke function to post data below
+        data.saveNewEventData("events", createEventsObj)
+          .then(() => data.getEventData("events"))
+          .then(parsedEvents => {
+            const displayEventsContainer = document.querySelector("#display__events")
+            displayEventsContainer.innerHTML = ""
+            console.log("parsedEvents:", parsedEvents);
+            parsedEvents.forEach(event => {
+              displayEventsContainer.innerHTML += factory.createEventComponent(event)
+            });
+          })
+      }
+    });
+  });
+  // event listener for edit button
+  displayEventsContainer.addEventListener("click", event => {
+    if (event.target.id.startsWith("editEvent--")) {
+      const eventId = event.target.id.split("--")[1]
+      data.getEventById("events", eventId)
+        .then((event) => dom.renderEventFormToDom(event))
+        .then(() => {
+          const addEventSubmitButton = document.querySelector("#addEvent__submit")
+          // eventlistener on add event form submit button
+          addEventSubmitButton.addEventListener("click", event => {
+            console.log("hello")
+            // get reference to input fields
+            const eventName = document.querySelector("#eventName")
+            const eventDate = document.querySelector("#eventDate")
+            const eventLocation = document.querySelector("#eventLocation")
+            const eventId = document.querySelector("#eventId")
+            const activeUser = sessionStorage.activeUser
+            const createEventsObj = factory.createEventInputObj(activeUser, eventName.value, eventDate.value, eventLocation.value)
+            console.log(eventId.value)
+            if (eventId.value !== "") {
+              data.editEventData("events", eventId.value, createEventsObj)
+                .then(() => data.getEventData("events"))
+                .then(parsedEvents => {
+                  const displayEventsContainer = document.querySelector("#display__events")
+                  displayEventsContainer.innerHTML = ""
+                  parsedEvents.forEach(event => {
+                    displayEventsContainer.innerHTML += factory.createEventComponent(event)
+                  });
+                })
+            } else {
+              // invoke function to post data below
+              data.saveNewEventData("events", createEventsObj)
+                .then(() => data.getEventData("events"))
+                .then(parsedEvents => {
+                  const displayEventsContainer = document.querySelector("#display__events")
+                  displayEventsContainer.innerHTML = ""
+                  console.log("parsedEvents:", parsedEvents);
+                  parsedEvents.forEach(event => {
+                    displayEventsContainer.innerHTML += factory.createEventComponent(event)
+                  });
+                })
+            }
+          });
+        })
+    }
+  });
+}
+
+
 
 // ==================== News Section =====================
 data.getData("news").then(articles => {
