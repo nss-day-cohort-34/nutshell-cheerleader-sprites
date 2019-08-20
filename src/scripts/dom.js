@@ -71,9 +71,17 @@ renderToDom : (location, htmlRep) => {
         const activeUser = sessionStorage.activeUser;
         return `<section class="message--item message--item--${messageObject.id}">
                     <p class="message--item--message">${messageObject.user.username}: ${messageObject.message}</p>
-                    ${displayEditMsgButton(messageObject.userId, activeUser, messageObject)}
-                    <p class="message--item--date">${messageObject.date}</p>
+                    <section class="message--meta">
+                        <p class="message--item--date">${messageObject.date}</p>
+                        ${displayEditMsgButton(messageObject.userId, activeUser, messageObject)}
+                    </section>
                 </section>`;
+    },
+
+    // Clear message input fields
+    clearMessageInputs: () => {
+        document.querySelector(".messages--input--text").value = "";
+        document.querySelector(".message--input--hidden").value = "";
     }
 });
 

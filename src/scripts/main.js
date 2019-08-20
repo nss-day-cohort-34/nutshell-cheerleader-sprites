@@ -125,7 +125,9 @@ const displayMessages = () => {
             const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
             dom.renderToDom(messageContainer, messageHTML);
           });
-        });
+        })
+        .then(() => dom.clearMessageInputs());
+
     } else {
 
       // hiddenInput is not blank, put to the database to edit the existing message
@@ -140,14 +142,9 @@ const displayMessages = () => {
           const messageHTML = dom.createMessageHTML(message, dom.displayEditMsgButton);
           dom.renderToDom(messageContainer, messageHTML);
         });
-      });
-
-      // Reset hiddenInput value to empty string
-      hiddenInputValue = "";
+      })
+      .then(() => dom.clearMessageInputs());
     }
-
-
-
   });
 
   // Listen to messagesList for clicks on an edit button

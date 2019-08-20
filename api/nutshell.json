@@ -59,42 +59,6 @@
       "message": "Aenean egestas nisi vitae ipsum iaculis luctus. Donec ullamcorper tellus et viverra semper. Vestibulum a tristique dolor. ",
       "date": "8/19/2019, 2:14:35 PM",
       "id": 13
-    },
-    {
-      "userId": "3",
-      "message": "Duis id lobortis lacus, vitae auctor erat. Nam ac sapien ultricies, eleifend lorem tristique, ultricies tellus. Fusce tortor metus, gravida quis dui a, cursus dapibus ligula.",
-      "date": "8/19/2019, 2:16:49 PM",
-      "id": 14
-    },
-    {
-      "userId": "3",
-      "message": "New message to test live updating",
-      "date": "8/19/2019, 2:54:49 PM",
-      "id": 15
-    },
-    {
-      "userId": "2",
-      "message": "Etiam convallis leo at elit viverra, ac posuere lectus scelerisque. Suspendisse lobortis faucibus massa, ac facilisis orci egestas sit amet. Ut cursus dapibus libero faucibus posuere. ",
-      "date": "8/19/2019, 2:18:48 PM",
-      "id": 16
-    },
-    {
-      "userId": "2",
-      "message": "Maecenas nec nisi hendrerit, dignissim enim in, laoreet lectus. ",
-      "date": "8/19/2019, 3:01:25 PM",
-      "id": 17
-    },
-    {
-      "userId": "2",
-      "message": "Phasellus convallis eros ac lorem semper dictum. Nam sollicitudin pharetra est, eu vestibulum lectus imperdiet et. Duis tristique rhoncus lacus, sit amet aliquam dui suscipit vitae.",
-      "date": "8/19/2019, 3:05:22 PM",
-      "id": 18
-    },
-    {
-      "userId": "1",
-      "message": "Proin condimentum placerat quam varius facilisis",
-      "date": "8/19/2019, 3:05:51 PM",
-      "id": 19
     }
   ],
   "events": [
