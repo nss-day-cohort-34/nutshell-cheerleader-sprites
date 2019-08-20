@@ -90,8 +90,11 @@
   cursor: pointer;
 }
 
-.far-check-circle {
+.fa-check-circle:hover {
   color: #6eb200;
+}
+.fa-circle:hover {
+  color: #6eb200 !important;
 }
 
 .item p.text {

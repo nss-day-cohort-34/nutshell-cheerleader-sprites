@@ -11,6 +11,7 @@ const data = Object.create({
   },
 
   getData: resource => {
+    console.log(`http://localhost:8088/${resource}`);
     return fetch(`http://localhost:8088/${resource}`).then(response =>
       response.json()
     );

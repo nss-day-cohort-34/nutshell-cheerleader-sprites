@@ -114,7 +114,7 @@ document.querySelector(".task_button").addEventListener("click", () => {
   if (hiddenDomEdit.value !== "") {
     data
       .editData("tasks", hiddenDomEdit.value, newTaskObj)
-      .then(() => data.getData("tasks"))
+      .then(() => data.getData(`tasks?userId=${userID}`))
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
@@ -133,7 +133,7 @@ document.querySelector(".task_button").addEventListener("click", () => {
   } else
     data
       .saveData("tasks", newTaskObj)
-      .then(() => data.getData("tasks"))
+      .then(() => data.getData(`tasks?userId=${userID}`))
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
@@ -175,7 +175,7 @@ taskContainer.addEventListener("click", event => {
       .then(newTask => {
         data
           .editData("tasks", checkID, newTask)
-          .then(() => data.getData("tasks"))
+          .then(() => data.getData(`tasks?userId=${userID}`))
           .then(tasks => {
             dom.placeToPutList.innerHTML = "";
             for (const task of tasks) {
