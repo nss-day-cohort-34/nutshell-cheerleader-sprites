@@ -4,11 +4,7 @@
 // ==================== Import modules ====================
 import data from "./data.js";
 import factory from "./factory.js";
-<<<<<<< HEAD
-import dom from "./dom";
-=======
 import dom from "./dom.js";
->>>>>>> master
 
 // ==================== Users Section =====================
 
