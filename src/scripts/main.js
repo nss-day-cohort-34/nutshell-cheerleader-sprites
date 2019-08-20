@@ -118,8 +118,10 @@ document.querySelector(".task_button").addEventListener("click", () => {
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
-          const newTaskHTML = factory.createTaskHtml(task);
-          dom.renderToDom(dom.placeToPutList, newTaskHTML);
+          if (task.completed === false) {
+            const newTaskHTML = factory.createTaskHtml(task);
+            dom.renderToDom(dom.placeToPutList, newTaskHTML);
+          }
         }
       })
       .then((hiddenDomEdit.value = ""))
@@ -135,8 +137,10 @@ document.querySelector(".task_button").addEventListener("click", () => {
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
-          const newTaskHTML = factory.createTaskHtml(task);
-          dom.renderToDom(dom.placeToPutList, newTaskHTML);
+          if (task.completed === false) {
+            const newTaskHTML = factory.createTaskHtml(task);
+            dom.renderToDom(dom.placeToPutList, newTaskHTML);
+          }
         }
       })
       .then(() => {
@@ -152,15 +156,36 @@ document.querySelector(".task_button").addEventListener("click", () => {
 taskContainer.addEventListener("click", event => {
   console.log("hi");
   if (event.target.id.startsWith("check")) {
-    dom.placeToPutList.innerHTML = "";
     console.log("hi inside");
     const checkID = event.target.id.split("_")[1];
     console.log("checkID: ", checkID);
 
     data
-      .deleteData("tasks", checkID)
-      .then(data.getData("tasks"))
-      .then();
+      .getData(`tasks/${checkID}`)
+      .then(task => {
+        console.log(task);
+        const newTask = factory.createTaskObj(
+          task.taskName,
+          task.taskDate,
+          task.userID,
+          true
+        );
+        return newTask;
+      })
+      .then(newTask => {
+        data
+          .editData("tasks", checkID, newTask)
+          .then(() => data.getData("tasks"))
+          .then(tasks => {
+            dom.placeToPutList.innerHTML = "";
+            for (const task of tasks) {
+              if (task.completed === false) {
+                const newTaskHTML = factory.createTaskHtml(task);
+                dom.renderToDom(dom.placeToPutList, newTaskHTML);
+              }
+            }
+          });
+      });
     console.log(checkID);
   }
   // edit button

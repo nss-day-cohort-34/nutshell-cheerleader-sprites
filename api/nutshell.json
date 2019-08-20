@@ -56,46 +56,29 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "userId": 1,
       "taskName": "Wash clothes",
       "taskDate": "08/12/19",
-      "completed": false
+      "completed": false,
+      "id": 1
     },
     {
-      "taskName": "test",
+      "taskName": "true test",
       "taskDate": "2019-08-20",
-      "userId": "2",
       "completed": false,
       "id": 2
     },
     {
-      "taskName": "test1",
+      "taskName": "toff",
       "taskDate": "2019-08-20",
-      "userId": "2",
-      "completed": false,
+      "completed": true,
       "id": 3
     },
     {
-      "taskName": "test 3",
+      "taskName": "toggle tester",
       "taskDate": "2019-08-20",
       "userId": "2",
       "completed": false,
       "id": 4
-    },
-    {
-      "taskName": "",
-      "taskDate": "",
-      "userId": "2",
-      "completed": false,
-      "id": 7
-    },
-    {
-      "taskName": "trd",
-      "taskDate": "",
-      "userId": "2",
-      "completed": false,
-      "id": 8
     }
   ]
 }
