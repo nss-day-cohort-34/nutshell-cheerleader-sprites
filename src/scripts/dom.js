@@ -27,7 +27,7 @@ renderToDom : (location, htmlRep) => {
 
 
 // ==================== News Section =====================
-
+aPlaceToPutNews : document.querySelector("#newsDisplay")
 
 
 

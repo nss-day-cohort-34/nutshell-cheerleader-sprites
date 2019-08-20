@@ -31,11 +31,11 @@ registerButton.addEventListener("click", event => {
       window.alert("Invalid username or email.");
     }
   })
-  .then(() => {
-    console.log("test");
-    document.querySelector(".login__username").value = ""
-    document.querySelector(".login__email").value = ""
-  });
+    .then(() => {
+      console.log("test");
+      document.querySelector(".login__username").value = ""
+      document.querySelector(".login__email").value = ""
+    });
 });
 
 loginButton.addEventListener("click", event => {
@@ -46,14 +46,17 @@ loginButton.addEventListener("click", event => {
     parsedUsers.forEach(user => {
       usernames.push(user.username);
     });
-
     parsedUsers.forEach(user => {
       if (user.username === usernameValue && user.email === emailValue) {
         sessionStorage.setItem("activeUser", user.id);
         console.log(sessionStorage.activeUser);
+<<<<<<< HEAD
 
         // Function that bundles necessary display functions for each piece of the dashboard to display the dashboard for the current user goes here
         displayMessages();
+=======
+        // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
+>>>>>>> master
       }
     });
 
@@ -82,9 +85,79 @@ loginButton.addEventListener("click", event => {
 // ==================== Events Section =====================
 
 // ==================== News Section =====================
-
+data.getData("news")
+  .then((articles) => {
+    dom.aPlaceToPutNews.innerHTML = ""
+    for (const article of articles) {
+      const newsHTML = factory.createNewsHTML(article)
+      dom.renderToDom(dom.aPlaceToPutNews, newsHTML)
+    }
+  })
+document.querySelector("#newsSubmitButton").addEventListener("click", () => {
+  const userID = sessionStorage.activeUser
+  const newsDateValue = document.querySelector("#newsDate").value
+  const newsTitleValue = document.querySelector("#newsTitle").value
+  const newsSummaryValue = document.querySelector("#newsSummary").value
+  const newsURLValue = document.querySelector("#newsURL").value
+  const hiddenNewsID = document.querySelector("#newsID").value
+  if (hiddenNewsID  !== "") {
+    data.editNews(hiddenNewsID)
+      .then(() => data.getData("news"))
+      .then((articles) => {
+        dom.aPlaceToPutNews.innerHTML = ""
+        for (const article of articles) {
+          const newsHTML = factory.createNewsHTML(article)
+          dom.renderToDom(dom.aPlaceToPutNews, newsHTML)
+          document.querySelector("#newsDate").value = ""
+          document.querySelector("#newsTitle").value = ""
+          document.querySelector("#newsSummary").value = ""
+          document.querySelector("#newsURL").value = ""
+          document.querySelector("#newsID").value = ""
+        }
+      })
+  }
+  else {
+    const newNewsObject = factory.createNewsObject(userID, newsURLValue, newsDateValue, newsSummaryValue, newsTitleValue)
+    data.saveData("news", newNewsObject)
+      .then(() => data.getData("news"))
+      .then((articles) => {
+        dom.aPlaceToPutNews.innerHTML = ""
+        for (const article of articles) {
+          const newsHTML = factory.createNewsHTML(article)
+          dom.renderToDom(dom.aPlaceToPutNews, newsHTML)
+        }
+      })
+      .then(() => {
+        document.querySelector("#newsDate").value = ""
+        document.querySelector("#newsTitle").value = ""
+        document.querySelector("#newsSummary").value = ""
+        document.querySelector("#newsURL").value = ""
+      })
+  }
+})
+  dom.aPlaceToPutNews.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteNews--")) {
+      const newsToDelete = event.target.id.split("--")[1]
+      data.deleteData("news", newsToDelete)
+        .then(() => data.getData("news"))
+        .then((articles) => {
+          dom.aPlaceToPutNews.innerHTML = ""
+          articles.forEach(article => {
+            const newNewsHTML = factory.createNewsHTML(article)
+            dom.renderToDom(dom.aPlaceToPutNews, newNewsHTML)
+          })
+        })
+    }
+  })
+  dom.aPlaceToPutNews.addEventListener("click", event => {
+    if (event.target.id.startsWith("editNews--")) {
+      const newsToEdit = event.target.id.split("--")[1]
+      data.updateFormFields(newsToEdit)
+    }
+  })
 // ==================== Tasks Section =====================
 
+<<<<<<< HEAD
 // ==================== Messages Section =====================
 
 // displayMessages contains all functionality that should be executed when a successful login is detected
@@ -216,3 +289,6 @@ const checkLoggedIn = () => {
 checkLoggedIn();
 
 
+=======
+// ==================== Messages Section ===================
+>>>>>>> master

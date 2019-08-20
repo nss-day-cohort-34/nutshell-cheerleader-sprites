@@ -32,7 +32,26 @@ const factory = Object.create({
 
 
 // ==================== News Section =====================
-
+    createNewsObject: (userId, url, date, title, summary) => {
+       return {
+        "userId": userId,
+        "url": url,
+        "date": date,
+        "title": title,
+        "summary": summary
+    }
+    },
+    createNewsHTML: (object) => {
+        return `
+        <section class="newsHTML">
+            <h1 class="newsHTMLHeader">${object.title}</h1>
+            <p>${object.summary}</p>
+            <a href="${object.url}">Go To Main Article</a>
+            <footer>${object.date}</footer>
+            <button id="deleteNews--${object.id}">Delete</button>
+            <button id="editNews--${object.id}">Edit</button>
+        </ section>`
+    }
 
 
 
@@ -57,5 +76,4 @@ const factory = Object.create({
         };
     }
 });
-
 export default factory;
