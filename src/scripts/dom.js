@@ -30,9 +30,9 @@ renderAddEventButtonToDom: () => {
         AddEventsButtonContainer.innerHTML += factory.createAddEventsButton()
     },
 
-renderAddEventFormToDom: () => {
-    const AddEventsFormContainer = document.querySelector("#event--section")
-    AddEventsFormContainer.innerHTML += factory.createEventsForm()
+renderEventFormToDom: (event) => {
+    const EventsFormContainer = document.querySelector("#event--section")
+    EventsFormContainer.innerHTML += factory.createHTMLEventForm(event)
 }
 
 

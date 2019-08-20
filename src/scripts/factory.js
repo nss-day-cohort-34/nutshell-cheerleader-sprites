@@ -37,7 +37,7 @@ createAddEventsButton: () => {
     `
     },
 // form that will appear when add event button is clicked
- createEventsForm: () => {
+ createHTMLEventForm: (event) => {
  return `
  <div class="addEvent__form--div" >   
     <section class="addEvent__form">
@@ -45,10 +45,10 @@ createAddEventsButton: () => {
             Create New Event Here
         </header>
         <div class="event__form--fieldsets">
-            
-                    Event Name: <input id="eventName" type="text" name="eventName" class="event__form--input"><br>
-                    Event Date: <input id="eventDate" type="date" name="eventDate" class="event__form--input"><br>
-                    Event Location: <input id="eventLocation" type="text" name="eventLocation" class="event__form--input"><br>
+        <input type="hidden" id="eventId" value="${event ? event.id : ""}" />
+                    Event Name: <input id="eventName" value="${event ? event.name : ""}" type="text" name="eventName" class="event__form--input"><br>
+                    Event Date: <input id="eventDate" value="${event ? event.date : ""}" type="date" name="eventDate" class="event__form--input"><br>
+                    Event Location: <input id="eventLocation" value="${event ? event.location : ""}" type="text" name="eventLocation" class="event__form--input"><br>
                 <button id="addEvent__submit">Submit</button>
         </div>
     </section>

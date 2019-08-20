@@ -64,6 +64,20 @@ const data = Object.create({
         })
             .then(response => response.json())
     },
+    editEventData: (resource, resourceId, object) => {
+        return fetch(`http://localhost:8088/${resource}/${resourceId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(object)
+        })
+            .then(response => response.json())
+    },
+    getEventById: (resource, resourceId) => {
+        return fetch(`http://localhost:8088/${resource}/${resourceId}`)
+        .then(response => response.json());
+    }
 
     // ==================== News Section =====================
 
