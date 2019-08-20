@@ -24,23 +24,24 @@
       "username": "kevin",
       "email": "kevin@gmail.com",
       "id": 5
-    },
-    {
-      "username": "jenny",
-      "email": "jenny@gmail.com",
-      "id": 7
     }
   ],
-  "news": [ 
-  {
-    "id": 1,
-    "userId":"",
-    "url": "",
-    "timestamp":"",
-    "title":"",
-    "summary":""
-  }
-],
+  "news": [
+    {
+      "url": "test.com",
+      "date": "2019-08-20",
+      "title": "test",
+      "summary": "test",
+      "id": 1
+    },
+    {
+      "url": "i need coffee",
+      "date": "2019-08-20",
+      "title": "blah blah blah",
+      "summary": "fdslkajsd;flk",
+      "id": 2
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -62,7 +63,7 @@
     {
       "id": 1,
       "userId": 1,
-      "taskName": "",  
+      "taskName": "",
       "taskDate": "",
       "completed": true
     }
