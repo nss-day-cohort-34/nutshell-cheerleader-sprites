@@ -1,4 +1,4 @@
-const dom = Object.create({ 
+const dom = Object.create({
 
 // ==================== Users Section =====================
 
@@ -19,7 +19,7 @@ const dom = Object.create({
 // ==================== Events Section =====================
 renderToDom : (location, htmlRep) => {
     location.innerHTML += htmlRep
-}
+},
 
 
 
@@ -27,7 +27,7 @@ renderToDom : (location, htmlRep) => {
 
 
 // ==================== News Section =====================
-
+aPlaceToPutNews : document.querySelector("#newsDisplay")
 
 
 

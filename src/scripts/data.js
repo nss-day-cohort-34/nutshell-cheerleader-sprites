@@ -1,3 +1,5 @@
+import dom from "./dom";
+
 const data = Object.create({
     // ==================== Users Section =====================
     saveData: (resource, object) => {
@@ -32,8 +34,7 @@ const data = Object.create({
             body: JSON.stringify(object)
         })
             .then(response => response.json())
-    }
-
+    },
     // ==================== Friendships Section =====================
 
 
@@ -51,7 +52,38 @@ const data = Object.create({
 
 
     // ==================== News Section =====================
-
+    updateFormFields: (newsID) => {
+        const hiddenNewsID = document.querySelector("#newsID")
+        const newsDate = document.querySelector("#newsDate")
+        const newsTitle = document.querySelector("#newsTitle")
+        const newsSummary = document.querySelector("#newsSummary")
+        const newsURL = document.querySelector("#newsURL")
+        fetch(`http://localhost:8088/news/${newsID}`)
+        .then(response => response.json())
+        .then(news => {
+            hiddenNewsID.value = news.id
+            newsDate.value = news.date
+            newsTitle.value = news.title
+            newsSummary.value = news.summary
+            newsURL.value = news.url
+        })
+    },
+    editNews: id => {
+        const updatedObject = {
+            url: document.querySelector("#newsURL").value,
+            date: document.querySelector("#newsDate").value,
+            title: document.querySelector("#newsTitle").value,
+            summary: document.querySelector("#newsSummary").value
+        }
+        return fetch(`http://localhost:8088/news/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedObject)
+        })
+        .then(res => res.json())
+    }
 
 
 
