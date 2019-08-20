@@ -35,10 +35,6 @@ const data = Object.create({
         })
             .then(response => response.json())
     },
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     // ==================== Friendships Section =====================
 
 
@@ -82,7 +78,7 @@ const data = Object.create({
     getEventById: (resource, resourceId) => {
         return fetch(`http://localhost:8088/${resource}/${resourceId}`)
         .then(response => response.json());
-    }
+    },
 
     // ==================== News Section =====================
     updateFormFields: (newsID) => {

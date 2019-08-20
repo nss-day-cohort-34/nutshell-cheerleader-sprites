@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import factory from "./factory.js"
 
-=======
->>>>>>> master
 const dom = Object.create({
 
 // ==================== Users Section =====================
@@ -22,7 +19,6 @@ const dom = Object.create({
 
 
 // ==================== Events Section =====================
-<<<<<<< HEAD
 // universal render function (just happens to be in my section)
 // renderToDom : (location, htmlRep) => {
 //     location.innerHTML += htmlRep
@@ -37,12 +33,10 @@ renderAddEventButtonToDom: () => {
 renderEventFormToDom: (event) => {
     const EventsFormContainer = document.querySelector("#event--section")
     EventsFormContainer.innerHTML += factory.createHTMLEventForm(event)
-}
-=======
+},
 renderToDom : (location, htmlRep) => {
     location.innerHTML += htmlRep
 },
->>>>>>> master
 
 
 

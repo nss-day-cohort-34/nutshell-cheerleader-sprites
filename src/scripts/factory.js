@@ -77,7 +77,7 @@ createAddEventsButton: () => {
     </button>
     </section>
     `
-}
+},
 
 
 
