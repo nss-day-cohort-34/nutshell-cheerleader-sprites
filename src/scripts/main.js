@@ -157,7 +157,6 @@ document.querySelector("#newsSubmitButton").addEventListener("click", () => {
   })
 // ==================== Tasks Section =====================
 
-<<<<<<< HEAD
 // ==================== Messages Section =====================
 
 // displayMessages contains all functionality that should be executed when a successful login is detected
@@ -289,6 +288,3 @@ const checkLoggedIn = () => {
 checkLoggedIn();
 
 
-=======
-// ==================== Messages Section ===================
->>>>>>> master
