@@ -28,26 +28,32 @@
   ],
   "news": [
     {
-      "url": "test.com",
+      "url": "http://loremricksum.com/?paragraphs=4&words=4",
       "date": "2019-08-20",
-      "title": "test",
-      "summary": "test",
-      "id": 1
+      "title": "RICK AND MORTY!",
+      "summary": "Well look where being smart got you. That's because losers look stuff up while the rest of us are carp'en all them 'diems. I'll tell you how I feel about school, Jerry. It's a waste of time. Bunch of people runnin' around bumpin' into each other, got a guy up front says, '2 + 2,' and the people in the back say, '4.' Then the bell rings and they give you a carton of milk and a piece of paper that says you can go take a dump or somethin'. I mean, it's not a place for smart people, Jerry. I know that's not a popular opinion, but that's my two cents on the issue. What the #### is going on?!",
+      "id": 3
     },
     {
-      "url": "i need coffee",
-      "date": "2019-08-20",
-      "title": "blah blah blah",
-      "summary": "fdslkajsd;flk",
-      "id": 2
+      "url": "http://loremricksum.com/?paragraphs=2&words=4",
+      "date": "2019-08-13",
+      "title": "wubba lubba dub dub",
+      "summary": "I mean, why would a poptart want to live inside a toaster, Rick? I mean, that would be like the scariest place for them to live. You know what I mean? Well he roped me into this! Nice one, Ms Pancakes. Rubber baby buggy bumpers!",
+      "id": 4
     }
   ],
   "messages": [
     {
       "id": 1,
       "userId": 1,
-      "messaage": "",
-      "date": ""
+      "message": "Howdy",
+      "date": "8/20/2019, 5:44:41 PM"
+    },
+    {
+      "userId": "2",
+      "message": "Hi Tom from Myspace!",
+      "date": "8/20/2019, 6:44:41 PM",
+      "id": 2
     }
   ],
   "events": [
@@ -78,27 +84,6 @@
       "date": "2019-08-28",
       "location": "nuPower",
       "id": 4
-    },
-    {
-      "userId": "4",
-      "name": "testing",
-      "date": "2019-08-19",
-      "location": "here",
-      "id": 5
-    },
-    {
-      "userId": "4",
-      "name": "test again",
-      "date": "2019-08-20",
-      "location": "here",
-      "id": 6
-    },
-    {
-      "userId": "4",
-      "name": "new event test clear",
-      "date": "2019-08-20",
-      "location": "nss",
-      "id": 7
     }
   ],
   "tasks": [
@@ -108,6 +93,32 @@
       "taskName": "",
       "taskDate": "",
       "completed": true
+    },
+    {
+      "taskName": "time to style",
+      "taskDate": "2019-08-20",
+      "userId": "2",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "taskName": "test",
+      "taskDate": "2019-08-20",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "taskName": "test",
+      "taskDate": "2019-08-20",
+      "userId": "2",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "taskName": "",
+      "taskDate": "",
+      "completed": true,
+      "id": 5
     }
   ]
 }
