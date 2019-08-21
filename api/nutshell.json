@@ -31,27 +31,49 @@
       "id": 6
     }
   ],
-  "news": [],
-  "messages": [],
-  "events": [],
-  "tasks": [
+  "news": [
     {
-      "taskName": "sf",
-      "taskDate": "2019-08-28",
-      "completed": false,
+      "userId": 4,
+      "url": "",
+      "date": "2019-08-14",
+      "title": "vghbj",
+      "summary": "bhjk",
+      "id": 1
+    }
+  ],
+  "messages": [
+    {
+      "message": "huik",
+      "date": "8/21/2019, 12:05:47 PM",
       "id": 1
     },
     {
-      "taskName": "asdf",
-      "taskDate": "2019-08-27",
-      "completed": true,
+      "message": "huik",
+      "date": "8/21/2019, 12:05:49 PM",
       "id": 2
     },
     {
-      "taskName": "sdf",
-      "taskDate": "2019-08-13",
-      "completed": false,
+      "message": "huik",
+      "date": "8/21/2019, 12:05:53 PM",
       "id": 3
+    }
+  ],
+  "events": [
+    {
+      "userId": 4,
+      "name": "nashJS meetup",
+      "date": "2019-08-22",
+      "location": "campaign monitor",
+      "id": 1
+    }
+  ],
+  "tasks": [
+    {
+      "taskName": "jukh",
+      "taskDate": "2019-08-21",
+      "userId": 4,
+      "completed": false,
+      "id": 1
     }
   ]
 }

@@ -1,4 +1,6 @@
-import factory from "./factory.js";
+// Authors: Kevin, Curtis, Allie, Joe
+// Purpose: Holds object of functions that render information to DOM
+import factory from "./factory.js"
 
 const dom = Object.create({
   renderToDom: (location, htmlRep) => {
@@ -63,9 +65,9 @@ const dom = Object.create({
     AddEventsButtonContainer.innerHTML += factory.createAddEventsButton();
   },
 
-  renderEventFormToDom: event => {
-    const EventsFormContainer = document.querySelector("#event--section");
-    EventsFormContainer.innerHTML += factory.createHTMLEventForm(event);
-  }
+    renderEventFormToDom: (event) => {
+        const EventsFormContainer = document.querySelector(".addEvent__form--div")
+        EventsFormContainer.innerHTML += factory.createHTMLEventForm(event)
+    },
 });
 export default dom;
