@@ -74,12 +74,8 @@ loginButton.addEventListener("click", event => {
             userId = parseInt(sessionStorage.getItem("activeUser"));
 
             // Function that bundles necessary display functions for each piece of the dashboard to display the dashboard for the current user goes here
-<<<<<<< HEAD
             message.displayMessages();
-=======
-            displayMessages();
             getTask(userId);
->>>>>>> master
 
             // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
           }
