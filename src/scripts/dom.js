@@ -1,3 +1,5 @@
+// Authors: Kevin, Curtis, Allie, Joe
+// Purpose: Holds object of functions that render information to DOM
 import factory from "./factory.js"
 
 const dom = Object.create({
@@ -63,7 +65,7 @@ const dom = Object.create({
     },
 
     renderEventFormToDom: (event) => {
-        const EventsFormContainer = document.querySelector("#event--section")
+        const EventsFormContainer = document.querySelector(".addEvent__form--div")
         EventsFormContainer.innerHTML += factory.createHTMLEventForm(event)
     },
 });

@@ -107,12 +107,19 @@ loginButton.addEventListener("click", event => {
 // wrapped all the functions in another function
 const displayEvents = () => {
   // first render my add event button to the dom
-  dom.renderAddEventButtonToDom()
+  // dom.renderAddEventButtonToDom()
   // GET data
   data.getEventData("events").then(parsedEvents => {
     const displayEventsContainer = document.querySelector("#display__events")
     displayEventsContainer.innerHTML = ""
+    // parsedEvents.sort(function(a,b) {
+    // return a.date - b.date
+    // })
     parsedEvents.forEach(event => {
+      // sort array by date
+      // parsedEvents.sort(function(a,b){
+      // return a.date > b.date;
+      // })
       displayEventsContainer.innerHTML += factory.createEventComponent(event)
     });
   })
@@ -173,6 +180,7 @@ const displayEvents = () => {
             console.log("parsedEvents:", parsedEvents);
             parsedEvents.forEach(event => {
               displayEventsContainer.innerHTML += factory.createEventComponent(event)
+              document.querySelector(".addEvent__form--div").innerHTML = ""
             });
           })
       }
@@ -205,6 +213,7 @@ const displayEvents = () => {
                   displayEventsContainer.innerHTML = ""
                   parsedEvents.forEach(event => {
                     displayEventsContainer.innerHTML += factory.createEventComponent(event)
+                    document.querySelector(".addEvent__form--div").innerHTML = ""
                   });
                 })
             } else {
@@ -556,6 +565,7 @@ const checkLoggedIn = () => {
     });
 
     displayMessages();
+    displayEvents();
   }
 };
 

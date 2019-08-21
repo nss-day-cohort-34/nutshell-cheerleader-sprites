@@ -1,3 +1,5 @@
+// Authors: Kevin, Curtis, Allie, Joe
+// Purpose: Holds an object that contains fetch calls to post, delete, get, & edit
 import dom from "./dom";
 
 const data = Object.create({

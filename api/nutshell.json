@@ -52,13 +52,6 @@
   ],
   "events": [
     {
-      "id": 1,
-      "userId": 1,
-      "name": "Yoga",
-      "date": "8-22-2019",
-      "location": "Jackalope Brewery"
-    },
-    {
       "id": 2,
       "userId": 1,
       "name": "Preds Fest",
@@ -81,24 +74,45 @@
     },
     {
       "userId": "4",
-      "name": "testing",
-      "date": "2019-08-19",
-      "location": "here",
-      "id": 5
+      "name": "Yoga",
+      "date": "2019-08-22",
+      "location": "Yoga Studio",
+      "id": 9
+    },
+    {
+      "userId": "4",
+      "name": "Wine tasting",
+      "date": "2019-08-24",
+      "location": "Arrington Vineyards",
+      "id": 10
+    },
+    {
+      "userId": "4",
+      "name": "Live on the green",
+      "date": "2019-08-23",
+      "location": "Downtown",
+      "id": 11
+    },
+    {
+      "userId": "4",
+      "name": "testing edit",
+      "date": "2019-08-22",
+      "location": "nss",
+      "id": 12
     },
     {
       "userId": "4",
       "name": "test again",
-      "date": "2019-08-20",
-      "location": "here",
-      "id": 6
+      "date": "2019-08-22",
+      "location": "nss",
+      "id": 13
     },
     {
       "userId": "4",
-      "name": "new event test clear",
-      "date": "2019-08-20",
+      "name": "hello allie",
+      "date": "2019-08-22",
       "location": "nss",
-      "id": 7
+      "id": 14
     }
   ],
   "tasks": [

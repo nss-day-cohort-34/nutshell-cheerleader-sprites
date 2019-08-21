@@ -1,4 +1,5 @@
 // Authors: Kevin, Curtis, Allie, Joe
+// Purpose: Holds all factory functions (objects and htmlRepresentations)
 
 const factory = Object.create({
     createUser: (username, email) => {
@@ -75,7 +76,6 @@ const factory = Object.create({
     // form that will appear when add event button is clicked
     createHTMLEventForm: (event) => {
         return `
- <div class="addEvent__form--div" >   
     <section class="addEvent__form">
         <header class="addEvent__form--title">
             Create New Event Here
@@ -88,7 +88,6 @@ const factory = Object.create({
                 <button id="addEvent__submit">Submit</button>
         </div>
     </section>
-</div> 
 `
     },
     // function to create event object
@@ -101,7 +100,7 @@ const factory = Object.create({
         }
     },
     createEventComponent: (event) => {
-        return `<section>
+        return `<section id="card__container" class="card__container">
     <h3>${event.name}</h3>
     <p>${event.date}</p>
     <p>${event.location}</p>
