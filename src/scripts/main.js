@@ -536,11 +536,13 @@ const displayMessages = () => {
           );
           dom.renderToDom(messageContainer, messageHTML);
         });
+
+        message.scrollToBottom();
       }
 
       // Set numMessages equal to the number of objects returned by the GET request
       numMessages = parsedMessages.length;
-    }).then(() => message.scrollToBottom());
+    });
   };
 
   // Check to see if there are new messages every 5 seconds
