@@ -10,7 +10,7 @@ import dom from "./dom.js";
 
 const registerButton = document.querySelector(".register__button");
 const loginButton = document.querySelector(".login__button");
-
+let userId;
 // Takes input values, creates user object and saves it to the database
 registerButton.addEventListener("click", event => {
   let usernameValue = document.querySelector(".login__username").value;
@@ -52,8 +52,9 @@ loginButton.addEventListener("click", event => {
     parsedUsers.forEach(user => {
       if (user.username === usernameValue && user.email === emailValue) {
         sessionStorage.setItem("activeUser", user.id);
+        userId = parseInt(sessionStorage.getItem("activeUser"));
         console.log(sessionStorage.activeUser);
-
+        getTask(userId);
         // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
         displayEvents();
       }
@@ -69,10 +70,11 @@ loginButton.addEventListener("click", event => {
         parsedUsers.forEach(user => {
           if (user.username === usernameValue && user.email === emailValue) {
             sessionStorage.setItem("activeUser", user.id);
-            console.log(sessionStorage.activeUser);
+            userId = parseInt(sessionStorage.getItem("activeUser"));
 
             // Function that bundles necessary display functions for each piece of the dashboard to display the dashboard for the current user goes here
             displayMessages();
+            getTask(userId);
 
             // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
           }
@@ -100,7 +102,6 @@ loginButton.addEventListener("click", event => {
       });
   });
 });
-let userId = parseInt(sessionStorage.getItem("activeUser"));
 
 // ==================== Friendships Section =====================
 
@@ -349,15 +350,18 @@ const date = document.getElementById("task-input-Date");
 const taskContainer = document.getElementById("taskList");
 const hiddenDomEdit = document.querySelector("#hiddenEditFieldId");
 
-data.getData(`tasks?userId=${userId}`).then(tasks => {
-  dom.placeToPutList.innerHTML = "";
-  for (const task of tasks) {
-    if (task.completed === false) {
-      const newTaskHTML = factory.createTaskHtml(task);
-      dom.renderToDom(dom.placeToPutList, newTaskHTML);
+const getTask = user => {
+  data.getData(`tasks?userId=${user}`).then(tasks => {
+    console.log(user);
+    dom.placeToPutList.innerHTML = "";
+    for (const task of tasks) {
+      if (task.completed === false) {
+        const newTaskHTML = factory.createTaskHtml(task);
+        dom.renderToDom(dom.placeToPutList, newTaskHTML);
+      }
     }
-  }
-});
+  });
+};
 
 document.querySelector(".task_button").addEventListener("click", () => {
   const dateValue = date.value;
@@ -584,6 +588,7 @@ const displayMessages = () => {
 };
 
 const checkLoggedIn = () => {
+  const userId = parseInt(sessionStorage.getItem("activeUser"));
   if (userId > 0) {
     const landingPages = document.querySelectorAll(".landing--page");
     landingPages.forEach(page => {

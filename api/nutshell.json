@@ -24,10 +24,34 @@
       "username": "kevin",
       "email": "kevin@gmail.com",
       "id": 5
+    },
+    {
+      "username": "j",
+      "email": "j@j.com",
+      "id": 6
     }
   ],
   "news": [],
   "messages": [],
   "events": [],
-  "tasks": []
+  "tasks": [
+    {
+      "taskName": "sf",
+      "taskDate": "2019-08-28",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "taskName": "asdf",
+      "taskDate": "2019-08-27",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "taskName": "sdf",
+      "taskDate": "2019-08-13",
+      "completed": false,
+      "id": 3
+    }
+  ]
 }
