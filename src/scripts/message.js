@@ -1,3 +1,6 @@
+// Author: Joe Snyder
+// Purpose: handle all functionality to GET, POST, and PUT messages based on user actions
+
 import data from "./data.js";
 import dom from "./dom.js";
 import factory from "./factory.js";
