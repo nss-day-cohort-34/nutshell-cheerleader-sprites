@@ -44,10 +44,52 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": 1,
-      "messaage": "",
-      "date": ""
+      "userId": "3",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur auctor nisl a mollis.",
+      "date": "8/20/2019, 7:16:29 PM",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "message": "Aliquam vulputate leo vel felis consequat maximus. Suspendisse feugiat blandit libero, non pretium sapien rhoncus eget. Morbi semper eget sapien sit amet aliquam. ",
+      "date": "8/20/2019, 7:17:36 PM",
+      "id": 3
+    },
+    {
+      "userId": "3",
+      "message": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ",
+      "date": "8/20/2019, 7:18:01 PM",
+      "id": 4
+    },
+    {
+      "userId": "1",
+      "message": "Pellentesque imperdiet ligula vel massa pretium ornare. Ut at felis egestas, pharetra massa eu, fermentum augue. Sed porttitor leo id enim pellentesque, eu eleifend mi ultricies.",
+      "date": "8/20/2019, 7:18:20 PM",
+      "id": 5
+    },
+    {
+      "userId": "3",
+      "message": "Quisque lobortis, orci vitae mattis maximus, dui sem pulvinar dolor, sed rhoncus urna elit vitae odio. Vestibulum maximus, elit at luctus lobortis, velit libero tristique neque, non auctor felis tellus vitae odio.",
+      "date": "8/20/2019, 7:18:39 PM",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "message": "Aliquam pretium, nisi vel elementum finibus, turpis nulla euismod dolor, ut elementum eros orci vestibulum lacus. Donec eget finibus nulla. ",
+      "date": "8/20/2019, 7:19:01 PM",
+      "id": 7
+    },
+    {
+      "userId": "3",
+      "message": "Nunc vulputate odio dignissim, volutpat diam vel, dignissim urna. Curabitur sagittis, ante quis maximus viverra, arcu diam laoreet nibh, eu pellentesque dolor odio non risus. ",
+      "date": "8/20/2019, 8:00:28 PM",
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "message": "Pellentesque imperdiet ligula vel massa pretium ornare. Ut at felis egestas, pharetra massa eu, fermentum augue. Sed porttitor leo id enim pellentesque, eu eleifend mi ultricies.",
+      "date": "8/20/2019, 8:01:32 PM",
+      "id": 9
     }
   ],
   "events": [

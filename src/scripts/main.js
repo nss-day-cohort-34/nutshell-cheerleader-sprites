@@ -5,6 +5,7 @@
 import data from "./data.js";
 import factory from "./factory.js";
 import dom from "./dom.js";
+import message from "./message.js";
 
 // ==================== Users Section =====================
 
@@ -442,7 +443,8 @@ const displayMessages = () => {
       );
       dom.renderToDom(messageContainer, messageHTML);
     });
-  });
+  })
+    .then(() => message.scrollToBottom());
 
   // Add event listener to send button to post a new message
   const sendMessageButton = document.querySelector(".messages--input--button");
@@ -474,7 +476,8 @@ const displayMessages = () => {
             dom.renderToDom(messageContainer, messageHTML);
           });
         })
-        .then(() => dom.clearMessageInputs());
+        .then(() => dom.clearMessageInputs())
+        .then(() => message.scrollToBottom());
     } else {
       // hiddenInput is not blank, put to the database to edit the existing message
       const messageId = hiddenInputValue;
@@ -493,7 +496,8 @@ const displayMessages = () => {
             dom.renderToDom(messageContainer, messageHTML);
           });
         })
-        .then(() => dom.clearMessageInputs());
+        .then(() => dom.clearMessageInputs())
+        .then(() => message.scrollToBottom());
     }
   });
 
@@ -536,7 +540,7 @@ const displayMessages = () => {
 
       // Set numMessages equal to the number of objects returned by the GET request
       numMessages = parsedMessages.length;
-    });
+    }).then(() => message.scrollToBottom());
   };
 
   // Check to see if there are new messages every 5 seconds
