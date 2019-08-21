@@ -1,13 +1,91 @@
 /* landing page sections  */
 
 /* logged in section  */
-
 .hidden {
   display: none;
 }
-.newsHTML {
-  border: 2px solid black;
-  padding: 5px 5px 5px 5px;
-}
-/* footer section  */
 
+/* news section  */
+#news--section {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+#newsDisplay {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.newsHTML {
+  border: 5px solid darkgoldenrod;
+  padding: 5px 5px 5px 5px;
+  background-color: #cba257;
+  opacity: 0.9;
+  width: 40%;
+  margin: 10px 10px 10px 10px;
+  justify-content: space-around;
+}
+#newsSubmitButton:hover {
+  cursor: pointer;
+  width: 99%;
+  background-color: crimson;
+  color: white;
+}
+#newsForm {
+  background-image: url("/src/img/rickityNews.jpg");
+  height: 100%;
+  width: 40%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  display: table;
+  top: 0;
+  border: 2px solid #7a4b2e;
+  justify-content: space-around;
+}
+#newsForm label {
+  color: crimson;
+  font-family: "Special Elite", cursive;
+  font-weight: bolder;
+}
+
+/* event section  */
+#display__events {
+  display: flex;
+  flex-wrap: wrap;
+}
+#display__events section {
+  width: 35%;
+  border: 5px solid darkgoldenrod;
+  background-image: url("/src/img/adult-celebration-costume.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  font-family: "Bangers", cursive;
+  color: #50d924;
+}
+.event__form--fieldsets {
+  border: 5px solid darkgoldenrod;
+  background: #cba257;
+  margin: auto;
+  width: 50%;
+}
+#addEvent__submit {
+  margin: auto;
+}
+#addEvent__submit:hover {
+  width: 99%;
+  cursor: pointer;
+}
+/* article sections */
+/* .logged--in--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.logged--in--container aside {
+  width: 45%;
+  justify-content: space-around;
+} */

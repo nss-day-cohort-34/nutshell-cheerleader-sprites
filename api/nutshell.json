@@ -24,90 +24,34 @@
       "username": "kevin",
       "email": "kevin@gmail.com",
       "id": 5
+    },
+    {
+      "username": "j",
+      "email": "j@j.com",
+      "id": 6
     }
   ],
-  "news": [
+  "news": [],
+  "messages": [],
+  "events": [],
+  "tasks": [
     {
-      "url": "test.com",
-      "date": "2019-08-20",
-      "title": "test",
-      "summary": "test",
+      "taskName": "sf",
+      "taskDate": "2019-08-28",
+      "completed": false,
       "id": 1
     },
     {
-      "url": "i need coffee",
-      "date": "2019-08-20",
-      "title": "blah blah blah",
-      "summary": "fdslkajsd;flk",
+      "taskName": "asdf",
+      "taskDate": "2019-08-27",
+      "completed": true,
       "id": 2
-    }
-  ],
-  "messages": [
-    {
-      "id": 1,
-      "userId": 1,
-      "messaage": "",
-      "date": ""
-    }
-  ],
-  "events": [
-    {
-      "id": 1,
-      "userId": 1,
-      "name": "Yoga",
-      "date": "8-22-2019",
-      "location": "Jackalope Brewery"
     },
     {
-      "id": 2,
-      "userId": 1,
-      "name": "Preds Fest",
-      "date": "9-29-2019",
-      "location": "Bridgestone Arena"
-    },
-    {
-      "userId": "4",
-      "name": "nashJS meetup",
-      "date": "2019-08-28",
-      "location": "campaign monitor",
+      "taskName": "sdf",
+      "taskDate": "2019-08-13",
+      "completed": false,
       "id": 3
-    },
-    {
-      "userId": "4",
-      "name": "hot yoga",
-      "date": "2019-08-28",
-      "location": "nuPower",
-      "id": 4
-    },
-    {
-      "userId": "4",
-      "name": "testing",
-      "date": "2019-08-19",
-      "location": "here",
-      "id": 5
-    },
-    {
-      "userId": "4",
-      "name": "test again",
-      "date": "2019-08-20",
-      "location": "here",
-      "id": 6
-    },
-    {
-      "userId": "4",
-      "name": "new event test clear",
-      "date": "2019-08-20",
-      "location": "nss",
-      "id": 7
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "userId": 1,
-      "taskName": "",
-      "taskDate": "",
-      "completed": true
     }
   ]
 }
