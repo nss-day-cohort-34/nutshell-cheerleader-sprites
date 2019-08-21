@@ -35,7 +35,7 @@ const message = Object.create({
 
             // Create new message object with the input field value and activeUser id
             const messageObject = factory.createMessage(
-                sessionStorage.activeUser,
+                parseInt(sessionStorage.activeUser),
                 messageValue
             );
 
@@ -127,6 +127,8 @@ const message = Object.create({
 
         // Check to see if there are new messages every 5 seconds
         window.setInterval(checkMessages, 5000);
+        console.log(sessionStorage.activeUser);
+        console.log(parseInt(sessionStorage.activeUser));
     }
 });
 
