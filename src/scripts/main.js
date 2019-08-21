@@ -100,6 +100,7 @@ loginButton.addEventListener("click", event => {
       });
   });
 });
+let userId = parseInt(sessionStorage.getItem("activeUser"));
 
 // ==================== Friendships Section =====================
 
@@ -154,9 +155,8 @@ const displayEvents = () => {
       const eventDate = document.querySelector("#eventDate");
       const eventLocation = document.querySelector("#eventLocation");
       const eventId = document.querySelector("#eventId");
-      const activeUser = sessionStorage.activeUser;
       const createEventsObj = factory.createEventInputObj(
-        activeUser,
+        userId,
         eventName.value,
         eventDate.value,
         eventLocation.value
@@ -217,9 +217,8 @@ const displayEvents = () => {
             const eventDate = document.querySelector("#eventDate");
             const eventLocation = document.querySelector("#eventLocation");
             const eventId = document.querySelector("#eventId");
-            const activeUser = sessionStorage.activeUser;
             const createEventsObj = factory.createEventInputObj(
-              activeUser,
+              userId,
               eventName.value,
               eventDate.value,
               eventLocation.value
@@ -273,7 +272,6 @@ data.getData("news").then(articles => {
   }
 });
 document.querySelector("#newsSubmitButton").addEventListener("click", () => {
-  const userID = sessionStorage.activeUser;
   const newsDateValue = document.querySelector("#newsDate").value;
   const newsTitleValue = document.querySelector("#newsTitle").value;
   const newsSummaryValue = document.querySelector("#newsSummary").value;
@@ -297,7 +295,7 @@ document.querySelector("#newsSubmitButton").addEventListener("click", () => {
       });
   } else {
     const newNewsObject = factory.createNewsObject(
-      userID,
+      userId,
       newsURLValue,
       newsDateValue,
       newsSummaryValue,
@@ -351,20 +349,29 @@ const date = document.getElementById("task-input-Date");
 const taskContainer = document.getElementById("taskList");
 const hiddenDomEdit = document.querySelector("#hiddenEditFieldId");
 
+data.getData(`tasks?userId=${userId}`).then(tasks => {
+  dom.placeToPutList.innerHTML = "";
+  for (const task of tasks) {
+    if (task.completed === false) {
+      const newTaskHTML = factory.createTaskHtml(task);
+      dom.renderToDom(dom.placeToPutList, newTaskHTML);
+    }
+  }
+});
+
 document.querySelector(".task_button").addEventListener("click", () => {
-  const userID = sessionStorage.activeUser;
   const dateValue = date.value;
   const taskNameValue = input.value;
   const newTaskObj = factory.createTaskObj(
     taskNameValue,
     dateValue,
-    userID,
+    userId,
     false
   );
   if (hiddenDomEdit.value !== "") {
     data
       .editData("tasks", hiddenDomEdit.value, newTaskObj)
-      .then(() => data.getData(`tasks?userId=${userID}`))
+      .then(() => data.getData(`tasks?userId=${userId}`))
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
@@ -383,7 +390,7 @@ document.querySelector(".task_button").addEventListener("click", () => {
   } else
     data
       .saveData("tasks", newTaskObj)
-      .then(() => data.getData(`tasks?userId=${userID}`))
+      .then(() => data.getData(`tasks?userId=${userId}`))
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
@@ -417,7 +424,7 @@ taskContainer.addEventListener("click", event => {
         const newTask = factory.createTaskObj(
           task.taskName,
           task.taskDate,
-          task.userID,
+          task.userId,
           true
         );
         return newTask;
@@ -425,7 +432,7 @@ taskContainer.addEventListener("click", event => {
       .then(newTask => {
         data
           .editData("tasks", checkID, newTask)
-          .then(() => data.getData(`tasks?userId=${userID}`))
+          .then(() => data.getData(`tasks?userId=${userId}`))
           .then(tasks => {
             dom.placeToPutList.innerHTML = "";
             for (const task of tasks) {
@@ -460,6 +467,7 @@ const options = {
 const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
+
 // ==================== Messages Section =====================
 
 // displayMessages contains all functionality that should be executed when a successful login is detected
@@ -487,10 +495,7 @@ const displayMessages = () => {
       .value;
 
     // Create new message object with the input field value and activeUser id
-    const messageObject = factory.createMessage(
-      sessionStorage.activeUser,
-      messageValue
-    );
+    const messageObject = factory.createMessage(userId, messageValue);
 
     if (hiddenInputValue === "") {
       // If hiddenInput is blank, post to the database as a new message
@@ -579,7 +584,7 @@ const displayMessages = () => {
 };
 
 const checkLoggedIn = () => {
-  if (sessionStorage.activeUser > 0) {
+  if (userId > 0) {
     const landingPages = document.querySelectorAll(".landing--page");
     landingPages.forEach(page => {
       page.classList.add("hidden");
