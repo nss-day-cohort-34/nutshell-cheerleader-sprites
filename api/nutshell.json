@@ -43,9 +43,19 @@
   ],
   "messages": [
     {
-      "message": "huik",
-      "date": "8/21/2019, 12:05:47 PM",
-      "id": 1
+      "userId": 2,
+      "message": "Pellentesque imperdiet ligula vel massa pretium ornare. Ut at felis egestas, pharetra massa eu, fermentum augue. Sed porttitor leo id enim pellentesque, eu eleifend mi ultricies.",
+      "date": "8/21/2019, 10:48:17 AM",
+      "id": 11
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Yoga",
+      "date": "8-22-2019",
+      "location": "Jackalope Brewery"
     },
     {
       "message": "huik",
@@ -58,29 +68,75 @@
       "id": 3
     }
   ],
-  "events": [
-    {
-      "userId": 4,
-      "name": "nashJS meetup",
-      "date": "2019-08-22",
-      "location": "campaign monitor",
-      "id": 1
-    }
-  ],
   "tasks": [
     {
-      "taskName": "jukh",
-      "taskDate": "2019-08-21",
-      "userId": 4,
-      "completed": false,
-      "id": 1
+      "id": 1,
+      "userId": 1,
+      "taskName": "",
+      "taskDate": "",
+      "completed": true
     },
     {
-      "taskName": "test",
-      "taskDate": "2019-08-21",
-      "userId": 2,
-      "completed": false,
+      "taskName": "take out garbage",
+      "taskDate": "",
+      "completed": true,
       "id": 2
+    },
+    {
+      "taskName": "clean the house",
+      "taskDate": "2019-08-22",
+      "completed": true,
+      "id": 3
+    },
+    {
+      "taskName": "do homework",
+      "taskDate": "",
+      "userId": "1",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "taskName": "take out garbage",
+      "taskDate": "2019-08-23",
+      "userId": "1",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "taskName": "send birthday card",
+      "taskDate": "2019-08-23",
+      "completed": true,
+      "id": 6
+    },
+    {
+      "taskName": "get groceries",
+      "taskDate": "2019-08-22",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "taskName": "take out trash",
+      "taskDate": "2019-08-29",
+      "completed": true,
+      "id": 8
+    },
+    {
+      "taskName": "nutshell project",
+      "taskDate": "2019-08-21",
+      "completed": true,
+      "id": 9
+    },
+    {
+      "taskName": "take out garbage",
+      "taskDate": "2019-08-21",
+      "completed": true,
+      "id": 10
+    },
+    {
+      "taskName": "study",
+      "taskDate": "2019-08-23",
+      "completed": true,
+      "id": 11
     }
   ]
 }
