@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/taskList.css" />
   <link rel="stylesheet" href="styles/messages.css" />
+  <link rel="stylesheet" href="styles/events.css" />
   <link href="https://fonts.googleapis.com/css?family=Bangers|Coming+Soon|Lacquer|Special+Elite&display=swap"
     rel="stylesheet" />
   <title>Nutshell</title>
 </head>
+
 
 <body>
   <!-- <article class="landingPage--container"> -->
@@ -20,6 +22,7 @@
     <div class="inner">
       <div class="content">
         <h1>Welcome to Nutshell!!</h1>
+
 
         <a href="#login__container">
           <p>Register/Login</p>
@@ -60,12 +63,22 @@
       <!-- use the section--container to flex  -->
       <div id="flexed--sections">
         <aside id="event--section">
-          <h2>Event Placeholder</h2>
-          <div id="display__events"></div>
-          <!-- will inject content with js  -->
+          <h2>🎤📸Events🗿🎡</h2>
+          <div id="display__events" class="display__events"></div>
+          <div class="addEvent__form--div"></div>
+          <div class="addEvent__button">
+            <section class="addEvent__button">
+              <button id="AddEvent__button--id">
+                Add New Event
+              </button>
+            </section>
+          </div>
         </aside>
+        <!-- will inject content with js  -->
+
         <!-- end of events  -->
         <aside id="news--section">
+          <h2>📰News📳</h2>
           <section id="newsDisplay"></section>
           <form id="newsForm">
             <fieldset>
@@ -87,15 +100,16 @@
               <label for="newsURL">Link to Article</label>
               <input type="text" id="newsURL" />
             </fieldset>
+            <button type="submit" id="newsSubmitButton">
+              Post News Article
+            </button>
           </form>
-          <button type="submit" id="newsSubmitButton">
-            Post News Article
-          </button>
+
           <!-- will inject content with js  -->
         </aside>
         <!-- end of news  -->
         <div id="task--section">
-          <h2>task Placeholder</h2>
+          <h2>📅task📝</h2>
           <!-- task list begins here  -->
 
           <div class="taskContainer">
@@ -140,7 +154,7 @@
         </div>
         <!-- end of task  -->
         <aside id="messages--section">
-          <h2>Messages Placeholder</h2>
+          <h2>📧📟Messages📱💻</h2>
           <!-- will inject content with js  -->
         </aside>
         <!-- end of the friends  -->

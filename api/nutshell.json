@@ -24,22 +24,21 @@
       "username": "kevin",
       "email": "kevin@gmail.com",
       "id": 5
+    },
+    {
+      "username": "j",
+      "email": "j@j.com",
+      "id": 6
     }
   ],
   "news": [
     {
-      "url": "test.com",
-      "date": "2019-08-20",
-      "title": "test",
-      "summary": "test",
+      "userId": 4,
+      "url": "",
+      "date": "2019-08-14",
+      "title": "vghbj",
+      "summary": "bhjk",
       "id": 1
-    },
-    {
-      "url": "i need coffee",
-      "date": "2019-08-20",
-      "title": "blah blah blah",
-      "summary": "fdslkajsd;flk",
-      "id": 2
     }
   ],
   "messages": [
@@ -59,46 +58,23 @@
       "location": "Jackalope Brewery"
     },
     {
-      "id": 2,
-      "userId": 1,
-      "name": "Preds Fest",
-      "date": "9-29-2019",
-      "location": "Bridgestone Arena"
+      "message": "huik",
+      "date": "8/21/2019, 12:05:49 PM",
+      "id": 2
     },
     {
-      "userId": "4",
-      "name": "nashJS meetup",
-      "date": "2019-08-28",
-      "location": "campaign monitor",
+      "message": "huik",
+      "date": "8/21/2019, 12:05:53 PM",
       "id": 3
-    },
+    }
+  ],
+  "events": [
     {
-      "userId": "4",
-      "name": "hot yoga",
-      "date": "2019-08-28",
-      "location": "nuPower",
-      "id": 4
-    },
-    {
-      "userId": "4",
-      "name": "testing",
-      "date": "2019-08-19",
-      "location": "here",
-      "id": 5
-    },
-    {
-      "userId": "4",
-      "name": "test again",
-      "date": "2019-08-20",
-      "location": "here",
-      "id": 6
-    },
-    {
-      "userId": "4",
-      "name": "new event test clear",
-      "date": "2019-08-20",
-      "location": "nss",
-      "id": 7
+      "userId": 4,
+      "name": "nashJS meetup",
+      "date": "2019-08-22",
+      "location": "campaign monitor",
+      "id": 1
     }
   ],
   "tasks": [

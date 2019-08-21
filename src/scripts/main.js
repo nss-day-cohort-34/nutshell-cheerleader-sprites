@@ -11,7 +11,7 @@ import message from "./message.js";
 
 const registerButton = document.querySelector(".register__button");
 const loginButton = document.querySelector(".login__button");
-
+let userId;
 // Takes input values, creates user object and saves it to the database
 registerButton.addEventListener("click", event => {
   let usernameValue = document.querySelector(".login__username").value;
@@ -53,10 +53,11 @@ loginButton.addEventListener("click", event => {
     parsedUsers.forEach(user => {
       if (user.username === usernameValue && user.email === emailValue) {
         sessionStorage.setItem("activeUser", user.id);
+        userId = parseInt(sessionStorage.getItem("activeUser"));
         console.log(sessionStorage.activeUser);
-
+        getTask(userId);
         // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
-        displayEvents()
+        displayEvents();
       }
     });
 
@@ -70,10 +71,15 @@ loginButton.addEventListener("click", event => {
         parsedUsers.forEach(user => {
           if (user.username === usernameValue && user.email === emailValue) {
             sessionStorage.setItem("activeUser", user.id);
-            console.log(sessionStorage.activeUser);
+            userId = parseInt(sessionStorage.getItem("activeUser"));
 
             // Function that bundles necessary display functions for each piece of the dashboard to display the dashboard for the current user goes here
+<<<<<<< HEAD
             message.displayMessages();
+=======
+            displayMessages();
+            getTask(userId);
+>>>>>>> master
 
             // Call necessary functions using the activeUser id and render to the dashboard once that functionality is complete
           }
@@ -108,126 +114,165 @@ loginButton.addEventListener("click", event => {
 // wrapped all the functions in another function
 const displayEvents = () => {
   // first render my add event button to the dom
-  dom.renderAddEventButtonToDom()
+  // dom.renderAddEventButtonToDom()
   // GET data
   data.getEventData("events").then(parsedEvents => {
     const displayEventsContainer = document.querySelector("#display__events")
     displayEventsContainer.innerHTML = ""
+    // parsedEvents.sort(function(a,b) {
+    // return a.date - b.date
+    // })
     parsedEvents.forEach(event => {
+      // sort array by date
+      // parsedEvents.sort(function(a,b){
+      // return a.date > b.date;
+      // })
       displayEventsContainer.innerHTML += factory.createEventComponent(event)
     });
-  })
+  });
   // event listener on delete
-  const displayEventsContainer = document.querySelector("#display__events")
+  const displayEventsContainer = document.querySelector("#display__events");
   displayEventsContainer.addEventListener("click", event => {
     if (event.target.id.startsWith("deleteEvent--")) {
-      const eventId = event.target.id.split("--")[1]
-      data.deleteEventData("events", eventId)
+      const eventId = event.target.id.split("--")[1];
+      data
+        .deleteEventData("events", eventId)
         .then(() => data.getEventData("events"))
         .then(parsedEvents => {
-          const displayEventsContainer = document.querySelector("#display__events")
-          displayEventsContainer.innerHTML = ""
+          const displayEventsContainer = document.querySelector(
+            "#display__events"
+          );
+          displayEventsContainer.innerHTML = "";
           console.log("parsedEvents:", parsedEvents);
           parsedEvents.forEach(event => {
-            displayEventsContainer.innerHTML += factory.createEventComponent(event)
+            displayEventsContainer.innerHTML += factory.createEventComponent(
+              event
+            );
           });
-        })
+        });
     }
-  })
+  });
   // container where the form will appear once button is clicked
-  const addEventButton = document.querySelector("#AddEvent__button--id")
+  const addEventButton = document.querySelector("#AddEvent__button--id");
   // event listener to render add event form when button is clicked
   addEventButton.addEventListener("click", event => {
     // render the add event form when button is clicked
-    dom.renderEventFormToDom()
+    dom.renderEventFormToDom();
     // id of submit button on rendered add new event form
-    const addEventSubmitButton = document.querySelector("#addEvent__submit")
+    const addEventSubmitButton = document.querySelector("#addEvent__submit");
     // eventlistener on add event form submit button
     addEventSubmitButton.addEventListener("click", event => {
-      console.log("hello")
+      console.log("hello");
       // get reference to input fields
-      const eventName = document.querySelector("#eventName")
-      const eventDate = document.querySelector("#eventDate")
-      const eventLocation = document.querySelector("#eventLocation")
-      const eventId = document.querySelector("#eventId")
-      const activeUser = sessionStorage.activeUser
-      const createEventsObj = factory.createEventInputObj(activeUser, eventName.value, eventDate.value, eventLocation.value)
-      console.log(eventId.value)
+      const eventName = document.querySelector("#eventName");
+      const eventDate = document.querySelector("#eventDate");
+      const eventLocation = document.querySelector("#eventLocation");
+      const eventId = document.querySelector("#eventId");
+      const createEventsObj = factory.createEventInputObj(
+        userId,
+        eventName.value,
+        eventDate.value,
+        eventLocation.value
+      );
+      console.log(eventId.value);
       if (eventId.value !== "") {
-        data.editJournalEntry("events", eventId.value, createEventsObj)
+        data
+          .editJournalEntry("events", eventId.value, createEventsObj)
           .then(() => data.getEventData("events"))
           .then(parsedEvents => {
-            const displayEventsContainer = document.querySelector("#display__events")
-            displayEventsContainer.innerHTML = ""
+            const displayEventsContainer = document.querySelector(
+              "#display__events"
+            );
+            displayEventsContainer.innerHTML = "";
             console.log("parsedEvents:", parsedEvents);
             parsedEvents.forEach(event => {
-              displayEventsContainer.innerHTML += factory.createEventComponent(event)
+              displayEventsContainer.innerHTML += factory.createEventComponent(
+                event
+              );
             });
-          })
+          });
       } else {
         // invoke function to post data below
-        data.saveNewEventData("events", createEventsObj)
+        data
+          .saveNewEventData("events", createEventsObj)
           .then(() => data.getEventData("events"))
           .then(parsedEvents => {
-            const displayEventsContainer = document.querySelector("#display__events")
-            displayEventsContainer.innerHTML = ""
+            const displayEventsContainer = document.querySelector(
+              "#display__events"
+            );
+            displayEventsContainer.innerHTML = "";
             console.log("parsedEvents:", parsedEvents);
             parsedEvents.forEach(event => {
               displayEventsContainer.innerHTML += factory.createEventComponent(event)
+              document.querySelector(".addEvent__form--div").innerHTML = ""
             });
-          })
+          });
       }
     });
   });
   // event listener for edit button
   displayEventsContainer.addEventListener("click", event => {
     if (event.target.id.startsWith("editEvent--")) {
-      const eventId = event.target.id.split("--")[1]
-      data.getEventById("events", eventId)
-        .then((event) => dom.renderEventFormToDom(event))
+      const eventId = event.target.id.split("--")[1];
+      data
+        .getEventById("events", eventId)
+        .then(event => dom.renderEventFormToDom(event))
         .then(() => {
-          const addEventSubmitButton = document.querySelector("#addEvent__submit")
+          const addEventSubmitButton = document.querySelector(
+            "#addEvent__submit"
+          );
           // eventlistener on add event form submit button
           addEventSubmitButton.addEventListener("click", event => {
-            console.log("hello")
+            console.log("hello");
             // get reference to input fields
-            const eventName = document.querySelector("#eventName")
-            const eventDate = document.querySelector("#eventDate")
-            const eventLocation = document.querySelector("#eventLocation")
-            const eventId = document.querySelector("#eventId")
-            const activeUser = sessionStorage.activeUser
-            const createEventsObj = factory.createEventInputObj(activeUser, eventName.value, eventDate.value, eventLocation.value)
-            console.log(eventId.value)
+            const eventName = document.querySelector("#eventName");
+            const eventDate = document.querySelector("#eventDate");
+            const eventLocation = document.querySelector("#eventLocation");
+            const eventId = document.querySelector("#eventId");
+            const createEventsObj = factory.createEventInputObj(
+              userId,
+              eventName.value,
+              eventDate.value,
+              eventLocation.value
+            );
+            console.log(eventId.value);
             if (eventId.value !== "") {
-              data.editEventData("events", eventId.value, createEventsObj)
+              data
+                .editEventData("events", eventId.value, createEventsObj)
                 .then(() => data.getEventData("events"))
                 .then(parsedEvents => {
-                  const displayEventsContainer = document.querySelector("#display__events")
-                  displayEventsContainer.innerHTML = ""
+                  const displayEventsContainer = document.querySelector(
+                    "#display__events"
+                  );
+                  displayEventsContainer.innerHTML = "";
                   parsedEvents.forEach(event => {
                     displayEventsContainer.innerHTML += factory.createEventComponent(event)
+                    document.querySelector(".addEvent__form--div").innerHTML = ""
                   });
-                })
+                });
             } else {
               // invoke function to post data below
-              data.saveNewEventData("events", createEventsObj)
+              data
+                .saveNewEventData("events", createEventsObj)
                 .then(() => data.getEventData("events"))
                 .then(parsedEvents => {
-                  const displayEventsContainer = document.querySelector("#display__events")
-                  displayEventsContainer.innerHTML = ""
+                  const displayEventsContainer = document.querySelector(
+                    "#display__events"
+                  );
+                  displayEventsContainer.innerHTML = "";
                   console.log("parsedEvents:", parsedEvents);
                   parsedEvents.forEach(event => {
-                    displayEventsContainer.innerHTML += factory.createEventComponent(event)
+                    displayEventsContainer.innerHTML += factory.createEventComponent(
+                      event
+                    );
                   });
-                })
+                });
             }
           });
-        })
+        });
     }
   });
-}
-
-
+};
 
 // ==================== News Section =====================
 data.getData("news").then(articles => {
@@ -238,7 +283,6 @@ data.getData("news").then(articles => {
   }
 });
 document.querySelector("#newsSubmitButton").addEventListener("click", () => {
-  const userID = sessionStorage.activeUser;
   const newsDateValue = document.querySelector("#newsDate").value;
   const newsTitleValue = document.querySelector("#newsTitle").value;
   const newsSummaryValue = document.querySelector("#newsSummary").value;
@@ -262,7 +306,7 @@ document.querySelector("#newsSubmitButton").addEventListener("click", () => {
       });
   } else {
     const newNewsObject = factory.createNewsObject(
-      userID,
+      userId,
       newsURLValue,
       newsDateValue,
       newsSummaryValue,
@@ -316,20 +360,32 @@ const date = document.getElementById("task-input-Date");
 const taskContainer = document.getElementById("taskList");
 const hiddenDomEdit = document.querySelector("#hiddenEditFieldId");
 
+const getTask = user => {
+  data.getData(`tasks?userId=${user}`).then(tasks => {
+    console.log(user);
+    dom.placeToPutList.innerHTML = "";
+    for (const task of tasks) {
+      if (task.completed === false) {
+        const newTaskHTML = factory.createTaskHtml(task);
+        dom.renderToDom(dom.placeToPutList, newTaskHTML);
+      }
+    }
+  });
+};
+
 document.querySelector(".task_button").addEventListener("click", () => {
-  const userID = sessionStorage.activeUser;
   const dateValue = date.value;
   const taskNameValue = input.value;
   const newTaskObj = factory.createTaskObj(
     taskNameValue,
     dateValue,
-    userID,
+    userId,
     false
   );
   if (hiddenDomEdit.value !== "") {
     data
       .editData("tasks", hiddenDomEdit.value, newTaskObj)
-      .then(() => data.getData(`tasks?userId=${userID}`))
+      .then(() => data.getData(`tasks?userId=${userId}`))
       .then(tasks => {
         console.log(tasks);
         dom.placeToPutList.innerHTML = "";
@@ -349,7 +405,7 @@ document.querySelector(".task_button").addEventListener("click", () => {
   } else
     data
       .saveData("tasks", newTaskObj)
-      .then(() => data.getData(`tasks?userId=${userID}`))
+      .then(() => data.getData(`tasks?userId=${userId}`))
       .then(tasks => {
         dom.placeToPutList.innerHTML = "";
         for (const task of tasks) {
@@ -383,7 +439,7 @@ taskContainer.addEventListener("click", event => {
         const newTask = factory.createTaskObj(
           task.taskName,
           task.taskDate,
-          task.userID,
+          task.userId,
           true
         );
         return newTask;
@@ -391,7 +447,7 @@ taskContainer.addEventListener("click", event => {
       .then(newTask => {
         data
           .editData("tasks", checkID, newTask)
-          .then(() => data.getData(`tasks?userId=${newTask.userID}`))
+          .then(() => data.getData(`tasks?userId=${userId}`))
           .then(tasks => {
             console.log
             dom.placeToPutList.innerHTML = "";
@@ -430,7 +486,8 @@ dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 // Check to see if there is already an active user to remain logged in upon page refresh
 const checkLoggedIn = () => {
-  if (sessionStorage.activeUser > 0) {
+  const userId = parseInt(sessionStorage.getItem("activeUser"));
+  if (userId > 0) {
     const landingPages = document.querySelectorAll(".landing--page");
     landingPages.forEach(page => {
       page.classList.add("hidden");
@@ -442,6 +499,7 @@ const checkLoggedIn = () => {
     });
 
     message.displayMessages();
+    displayEvents();
   }
 };
 
