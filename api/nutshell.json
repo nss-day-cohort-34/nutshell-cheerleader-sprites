@@ -24,46 +24,43 @@
       "username": "kevin",
       "email": "kevin@gmail.com",
       "id": 5
-    }
-  ],
-  "news": [
-    {
-      "url": "test.com",
-      "date": "2019-08-20",
-      "title": "test",
-      "summary": "test",
-      "id": 1
     },
     {
-      "url": "i need coffee",
-      "date": "2019-08-20",
-      "title": "blah blah blah",
-      "summary": "fdslkajsd;flk",
-      "id": 2
+      "username": "j",
+      "email": "j@j.com",
+      "id": 6
     }
   ],
-  "messages": [
+  "news": [],
+  "messages": [],
+  "events": [],
+  "tasks": [
     {
-      "id": 1,
-      "userId": 1,
-      "messaage": "",
-      "date": ""
-    }
-  ],
-  "events": [
-    {
+<<<<<<< HEAD
       "id": 2,
       "userId": 1,
       "name": "Preds Fest",
       "date": "9-29-2019",
       "location": "Bridgestone Arena"
+=======
+      "taskName": "sf",
+      "taskDate": "2019-08-28",
+      "completed": false,
+      "id": 1
     },
     {
-      "userId": "4",
-      "name": "nashJS meetup",
-      "date": "2019-08-28",
-      "location": "campaign monitor",
+      "taskName": "asdf",
+      "taskDate": "2019-08-27",
+      "completed": true,
+      "id": 2
+>>>>>>> master
+    },
+    {
+      "taskName": "sdf",
+      "taskDate": "2019-08-13",
+      "completed": false,
       "id": 3
+<<<<<<< HEAD
     },
     {
       "userId": "4",
@@ -129,6 +126,8 @@
       "taskName": "",
       "taskDate": "",
       "completed": true
+=======
+>>>>>>> master
     }
   ]
 }
