@@ -39,7 +39,7 @@ const dom = Object.create({
 
   // Take in a message object and return an HTML representation of the message
   createMessageHTML: (messageObject, displayEditMsgButton) => {
-    const activeUser = sessionStorage.activeUser;
+    const activeUser = parseInt(sessionStorage.getItem("activeUser"));
     return `<section class="message--item message--item--${messageObject.id}">
                     <p class="message--item--message">${
                       messageObject.user.username
