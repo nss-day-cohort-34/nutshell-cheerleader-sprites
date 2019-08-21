@@ -4,7 +4,7 @@
     padding: 5px 5px 5px 5px;
 }
 .card__container:nth-child(2) {
-    background: beige;
+    background: #df8613d7;
   }
 .display__events {
     height: 300px;
