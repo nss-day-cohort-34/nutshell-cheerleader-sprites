@@ -29,6 +29,11 @@
       "username": "j",
       "email": "j@j.com",
       "id": 6
+    },
+    {
+      "username": "tink",
+      "email": "tink@mmail.com",
+      "id": 7
     }
   ],
   "news": [
@@ -47,6 +52,18 @@
       "message": "Pellentesque imperdiet ligula vel massa pretium ornare. Ut at felis egestas, pharetra massa eu, fermentum augue. Sed porttitor leo id enim pellentesque, eu eleifend mi ultricies.",
       "date": "8/21/2019, 10:48:17 AM",
       "id": 11
+    },
+    {
+      "userId": 2,
+      "message": "hello",
+      "date": "8/21/2019, 2:34:21 PM",
+      "id": 12
+    },
+    {
+      "userId": 7,
+      "message": "fcfc",
+      "date": "8/23/2019, 7:37:27 PM",
+      "id": 13
     }
   ],
   "events": [
@@ -70,22 +87,15 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "userId": 1,
-      "taskName": "",
-      "taskDate": "",
-      "completed": true
-    },
-    {
       "taskName": "take out garbage",
       "taskDate": "",
-      "completed": true,
+      "completed": false,
       "id": 2
     },
     {
       "taskName": "clean the house",
       "taskDate": "2019-08-22",
-      "completed": true,
+      "completed": false,
       "id": 3
     },
     {
@@ -105,38 +115,58 @@
     {
       "taskName": "send birthday card",
       "taskDate": "2019-08-23",
-      "completed": true,
+      "completed": false,
       "id": 6
     },
     {
       "taskName": "get groceries",
       "taskDate": "2019-08-22",
-      "completed": true,
+      "completed": false,
       "id": 7
     },
     {
       "taskName": "take out trash",
       "taskDate": "2019-08-29",
-      "completed": true,
+      "completed": false,
       "id": 8
     },
     {
       "taskName": "nutshell project",
       "taskDate": "2019-08-21",
-      "completed": true,
+      "completed": false,
       "id": 9
     },
     {
       "taskName": "take out garbage",
       "taskDate": "2019-08-21",
-      "completed": true,
+      "completed": false,
       "id": 10
     },
     {
       "taskName": "study",
       "taskDate": "2019-08-23",
-      "completed": true,
+      "completed": false,
       "id": 11
+    },
+    {
+      "taskName": "task check",
+      "taskDate": "2019-08-21",
+      "userId": 2,
+      "completed": false,
+      "id": 12
+    },
+    {
+      "taskName": "hello",
+      "taskDate": "2019-08-21",
+      "completed": false,
+      "id": 13
+    },
+    {
+      "taskName": "help me",
+      "taskDate": "2019-08-23",
+      "userId": 2,
+      "completed": false,
+      "id": 14
     }
   ]
 }

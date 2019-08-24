@@ -31,6 +31,19 @@ font-family: 'Special Elite', cursive; */
   top: 0;
   background-size: cover;
 }
+/* comment out the below lines of code to stop gif background image  */
+.logged--in--container {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(/src/img/sq.gif) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+
+/* comment out the above lines of code to stop gif background image  */
+
 .intro .inner {
   display: table-cell;
   vertical-align: middle;
